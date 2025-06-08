@@ -1,0 +1,31 @@
+```markdown
+# 动态函数调用报告
+
+## 1. 识别问题
+目标：从比赛分析中提取的关键问题
+- ID列名以<ID>PassengerId</ID>包裹。
+- 问题类型以<type>分类</type>包裹，选择分类、回归、时间序列当中之一，注意分辨问题。
+- 不参与模型训练列名以<drop>PassengerId, Cabin, Name</drop>包裹。
+- 模型的目标变量以<target>Transported</target>包裹。
+
+## 2. 阶段 1：数据预处理
+### 2.1 函数调用说明
+```python
+[
+    {"name": "fill_missing_values", "args": {"data": "train_data", "columns": ["HomePlanet", "CryoSleep", "Destination", "Age", "VIP", "RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"], "strategy": "mode"}},
+    {"name": "fill_missing_values", "args": {"data": "test_data", "columns": ["HomePlanet", "CryoSleep", "Destination", "Age", "VIP", "RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"], "strategy": "mode"}},
+    {"name": "detect_and_handle_outliers_zscore", "args": {"data": "train_data", "columns": ["Age", "RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"], "threshold": 3.0, "method": "clip"}},
+    {"name": "detect_and_handle_outliers_zscore", "args": {"data": "test_data", "columns": ["Age", "RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"], "threshold": 3.0, "method": "clip"}},
+    {"name": "one_hot_encode", "args": {"data": "train_data", "columns": ["HomePlanet", "CryoSleep", "Destination", "VIP"]}},
+    {"name": "one_hot_encode", "args": {"data": "test_data", "columns": ["HomePlanet", "CryoSleep", "Destination", "VIP"]}},
+    {"name": "label_encode", "args": {"data": "train_data", "columns": ["Transported"]}}
+]
+```
+
+## 3. 阶段 2：模型训练
+### 3.1 调用的函数
+```python
+[
+    {"name": "train_xgboost_classifier", "args": {"data": "train_data", "target": "Transported", "new_data": "test_data", "test_size": 0.2, "params": {"objective": "multi:softprob", "num_class": 2, "max_depth": 6, "eta": 0.1, "subsample": 0.8, "colsample_bytree": 0.8, "eval_metric": ["mlogloss", "merror"]}, "num_boost_round": 100, "with_label": False}}
+]
+```

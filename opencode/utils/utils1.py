@@ -2,22 +2,8 @@ import pandas as pd
 from io import StringIO
 import re
 import json
+import ast
 
-# 读取文件内容
-def read_file(file_path: str):
-    """
-    Read the content of a file and return it as a string.
-    """
-    if file_path.endswith('txt'):
-        with open(file_path, 'r', encoding='utf-8') as f:
-            return f.read()
-    if file_path.endswith('csv'):
-        with open(file_path, 'r', encoding='utf-8') as f:
-            return f.readlines()
-    if file_path.endswith('md'):
-        with open(file_path, 'r', encoding='utf-8') as f:
-            return f.read()
-        
 # 展示数据集的基本信息
 def show_info(data: pd.DataFrame) -> None:
     # 捕获 data.info() 的输出
@@ -72,19 +58,79 @@ def check_categorical_columns(train, test):
     return diff_col
 
 # 提取选取的函数
-def extract_functions(md_str):
+def extract_functions(file_path):
+    with open(file_path, "r") as f:
+        md_str = f.read()
     pattern = r'```python\n(\[.*?\])\n```'
     matches = re.findall(pattern, md_str, re.DOTALL)
 
     parsed_results = []
     for mat in matches:
         fixed_mat = mat.replace("\n", "")
-        fixed_mat = re.sub(r'\bFalse\b', 'false', fixed_mat)
-        fixed_mat = re.sub(r'\bTrue\b', 'true', fixed_mat)
-        fixed_mat = re.sub(r'\bNone\b', 'null', fixed_mat)
+        fixed_mat = re.sub(r'\bfalse\b', 'False', fixed_mat)
+        fixed_mat = re.sub(r'\btrue\b', 'True', fixed_mat)
+        fixed_mat = re.sub(r'\bnull\b', 'None', fixed_mat)
         try:
-            parsed_results.append(json.loads(fixed_mat))
+            parsed_results.append(fixed_mat)
         except json.JSONDecodeError as e:
             print(f"Failed to parse JSON: {e}")
 
     return parsed_results
+
+def convert_str_function(json_str):
+    data = ast.literal_eval(json_str)
+    results = []
+    for item in data:
+        name = item['name']
+        args = item['args']
+        arg_strs = []
+        for k, v in args.items():
+            # 保证字典等非字符串不被误转义为字符串
+            if isinstance(v, str):
+                arg_strs.append(f'{k}="{v}"')
+            else:
+                arg_strs.append(f"{k}={v}")
+        arg_str = ", ".join(arg_strs)
+        call_str = f'result = {name}({arg_str})'
+        results.append(call_str)
+
+    return "\n".join(results)
+
+# 读取文件内容
+def read_file(file_path: str):
+    """
+    Read the content of a file and return it as a string.
+    """
+    if file_path.endswith('txt'):
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return f.read()
+    if file_path.endswith('csv'):
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return f.readlines()
+    if file_path.endswith('md'):
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return f.read()
+        
+
+def write_file(file_path: str, content):
+    """
+    Write content to a file based on its extension.
+    
+    Args:
+        file_path: Path to the file to be written
+        content: Content to write (string for txt/md, list of strings for csv)
+    """
+    if file_path.endswith('txt'):
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.write(content if isinstance(content, str) else '\n'.join(content))
+    elif file_path.endswith('csv'):
+        with open(file_path, 'w', encoding='utf-8', newline='') as f:
+            if isinstance(content, list):
+                f.writelines(content)
+            else:
+                f.write(content)
+    elif file_path.endswith('md'):
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.write(content if isinstance(content, str) else '\n'.join(content))
+    else:
+        raise ValueError("Unsupported file format")

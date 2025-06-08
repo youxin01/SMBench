@@ -1,0 +1,586 @@
+2025-06-08 15:01:12.595 | INFO     | utils.local_interpreter:initialize:33 - 初始化本地内核
+2025-06-08 15:01:13.383 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import os
+work_dir = r'./'
+os.makedirs(work_dir, exist_ok=True)
+os.chdir(work_dir)
+print('当前工作目录:', os.getcwd())
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'DejaVu Sans', 'sans-serif']
+plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams['font.family'] = 'sans-serif'
+mpl.rcParams['font.size'] = 12
+mpl.rcParams['axes.labelsize'] = 12
+mpl.rcParams['xtick.labelsize'] = 10
+mpl.rcParams['ytick.labelsize'] = 10
+
+2025-06-08 15:01:21.226 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Dict, Any, Union, List,Optional
+2025-06-08 15:01:21.228 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:01:21.230 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Dict, Any, Union, List,Optional
+2025-06-08 15:01:21.490 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:01:21.491 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:01:21.491 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.data_clean import fill_missing_values
+2025-06-08 15:01:21.494 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:01:21.495 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.data_clean import fill_missing_values
+2025-06-08 15:01:21.503 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:01:21.503 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:01:21.504 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Dict, Any, Union, List,Optional
+2025-06-08 15:01:21.508 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:01:21.510 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Dict, Any, Union, List,Optional
+2025-06-08 15:01:21.516 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:01:21.516 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:01:21.516 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.data_clean import detect_and_handle_outliers_zscore
+2025-06-08 15:01:21.519 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:01:21.521 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.data_clean import detect_and_handle_outliers_zscore
+2025-06-08 15:01:21.527 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:01:21.528 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:01:22.003 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import List, Dict, Union
+from functools import reduce
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import os
+2025-06-08 15:01:22.006 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:01:22.007 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import List, Dict, Union
+from functools import reduce
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import os
+2025-06-08 15:01:22.303 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:01:22.303 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:01:22.303 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.feature_process import one_hot_encode
+2025-06-08 15:01:22.305 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:01:22.306 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.feature_process import one_hot_encode
+2025-06-08 15:01:22.310 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:01:22.310 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:01:22.310 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import List, Dict, Union
+from functools import reduce
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import os
+2025-06-08 15:01:22.312 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:01:22.313 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import List, Dict, Union
+from functools import reduce
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import os
+2025-06-08 15:01:22.317 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:01:22.317 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:01:22.318 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.feature_process import label_encode
+2025-06-08 15:01:22.320 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:01:22.321 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.feature_process import label_encode
+2025-06-08 15:01:22.324 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:01:22.325 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:01:25.176 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Callable
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression, LogisticRegression, RANSACRegressor
+from sklearn.metrics import mean_squared_error, accuracy_score, r2_score, classification_report
+from sklearn.preprocessing import PolynomialFeatures, MinMaxScaler
+from sklearn.pipeline import make_pipeline
+from sklearn.neighbors import KNeighborsClassifier
+import xgboost as xgb
+import lightgbm as lgb
+from scipy.interpolate import UnivariateSpline
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import DataLoader, TensorDataset
+from pmdarima import auto_arima
+import statsmodels.api as sm
+from sklearn.svm import SVC
+2025-06-08 15:01:25.180 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:01:25.181 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Callable
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression, LogisticRegression, RANSACRegressor
+from sklearn.metrics import mean_squared_error, accuracy_score, r2_score, classification_report
+from sklearn.preprocessing import PolynomialFeatures, MinMaxScaler
+from sklearn.pipeline import make_pipeline
+from sklearn.neighbors import KNeighborsClassifier
+import xgboost as xgb
+import lightgbm as lgb
+from scipy.interpolate import UnivariateSpline
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import DataLoader, TensorDataset
+from pmdarima import auto_arima
+import statsmodels.api as sm
+from sklearn.svm import SVC
+2025-06-08 15:01:27.042 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:01:27.043 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:01:27.043 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.machine_learning import train_xgboost_classifier
+2025-06-08 15:01:27.047 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:01:27.048 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.machine_learning import train_xgboost_classifier
+2025-06-08 15:01:27.056 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:01:27.056 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:05:07.846 | INFO     | utils.local_interpreter:initialize:33 - 初始化本地内核
+2025-06-08 15:05:08.636 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import os
+work_dir = r'./'
+os.makedirs(work_dir, exist_ok=True)
+os.chdir(work_dir)
+print('当前工作目录:', os.getcwd())
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'DejaVu Sans', 'sans-serif']
+plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams['font.family'] = 'sans-serif'
+mpl.rcParams['font.size'] = 12
+mpl.rcParams['axes.labelsize'] = 12
+mpl.rcParams['xtick.labelsize'] = 10
+mpl.rcParams['ytick.labelsize'] = 10
+
+2025-06-08 15:05:16.604 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Dict, Any, Union, List,Optional
+2025-06-08 15:05:16.607 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:05:16.607 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Dict, Any, Union, List,Optional
+2025-06-08 15:05:16.875 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:05:16.876 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:05:16.877 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.data_clean import fill_missing_values
+2025-06-08 15:05:16.880 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:05:16.882 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.data_clean import fill_missing_values
+2025-06-08 15:05:16.889 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:05:16.889 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:05:16.889 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Dict, Any, Union, List,Optional
+2025-06-08 15:05:16.891 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:05:16.892 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Dict, Any, Union, List,Optional
+2025-06-08 15:05:16.899 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:05:16.900 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:05:16.900 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.data_clean import detect_and_handle_outliers_zscore
+2025-06-08 15:05:16.903 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:05:16.904 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.data_clean import detect_and_handle_outliers_zscore
+2025-06-08 15:05:16.910 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:05:16.910 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:05:17.294 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import List, Dict, Union
+from functools import reduce
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import os
+2025-06-08 15:05:17.296 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:05:17.296 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import List, Dict, Union
+from functools import reduce
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import os
+2025-06-08 15:05:17.612 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:05:17.613 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:05:17.613 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.feature_process import one_hot_encode
+2025-06-08 15:05:17.616 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:05:17.617 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.feature_process import one_hot_encode
+2025-06-08 15:05:17.621 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:05:17.621 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:05:17.622 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import List, Dict, Union
+from functools import reduce
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import os
+2025-06-08 15:05:17.624 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:05:17.625 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import List, Dict, Union
+from functools import reduce
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import os
+2025-06-08 15:05:17.629 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:05:17.629 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:05:17.629 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.feature_process import label_encode
+2025-06-08 15:05:17.632 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:05:17.633 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.feature_process import label_encode
+2025-06-08 15:05:17.637 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:05:17.637 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:05:19.929 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Callable
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression, LogisticRegression, RANSACRegressor
+from sklearn.metrics import mean_squared_error, accuracy_score, r2_score, classification_report
+from sklearn.preprocessing import PolynomialFeatures, MinMaxScaler
+from sklearn.pipeline import make_pipeline
+from sklearn.neighbors import KNeighborsClassifier
+import xgboost as xgb
+import lightgbm as lgb
+from scipy.interpolate import UnivariateSpline
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import DataLoader, TensorDataset
+from pmdarima import auto_arima
+import statsmodels.api as sm
+from sklearn.svm import SVC
+2025-06-08 15:05:19.932 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:05:19.933 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Callable
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression, LogisticRegression, RANSACRegressor
+from sklearn.metrics import mean_squared_error, accuracy_score, r2_score, classification_report
+from sklearn.preprocessing import PolynomialFeatures, MinMaxScaler
+from sklearn.pipeline import make_pipeline
+from sklearn.neighbors import KNeighborsClassifier
+import xgboost as xgb
+import lightgbm as lgb
+from scipy.interpolate import UnivariateSpline
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import DataLoader, TensorDataset
+from pmdarima import auto_arima
+import statsmodels.api as sm
+from sklearn.svm import SVC
+2025-06-08 15:05:21.817 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:05:21.818 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:05:21.819 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.machine_learning import train_xgboost_classifier
+2025-06-08 15:05:21.824 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:05:21.826 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.machine_learning import train_xgboost_classifier
+2025-06-08 15:05:21.833 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:05:21.834 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:06:05.615 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: train_data = pd.read_csv("./test_case/p1/train.csv")
+test_data = pd.read_csv("./test_case/p1/test.csv")
+2025-06-08 15:06:05.621 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:06:05.621 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: train_data = pd.read_csv("./test_case/p1/train.csv")
+test_data = pd.read_csv("./test_case/p1/test.csv")
+2025-06-08 15:06:05.659 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:06:05.660 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:06:21.492 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: train_data1 = fill_missing_values(data=train_data, columns=['HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck'], strategy="mode")
+2025-06-08 15:06:21.497 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:06:21.498 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: train_data1 = fill_missing_values(data=train_data, columns=['HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck'], strategy="mode")
+2025-06-08 15:06:21.518 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:06:21.519 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:06:21.519 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: test_data1 = fill_missing_values(data=test_data, columns=['HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck'], strategy="mode")
+2025-06-08 15:06:21.524 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:06:21.525 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: test_data1 = fill_missing_values(data=test_data, columns=['HomePlanet', 'CryoSleep', 'Destination', 'Age', 'VIP', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck'], strategy="mode")
+2025-06-08 15:06:21.542 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:06:21.543 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:06:21.543 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: train_data2 = detect_and_handle_outliers_zscore(data=train_data1, columns=['Age', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck'], threshold=3.0, method="clip")
+2025-06-08 15:06:21.548 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:06:21.549 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: train_data2 = detect_and_handle_outliers_zscore(data=train_data1, columns=['Age', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck'], threshold=3.0, method="clip")
+2025-06-08 15:06:21.565 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:06:21.565 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:06:21.566 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: test_data2 = detect_and_handle_outliers_zscore(data=test_data1, columns=['Age', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck'], threshold=3.0, method="clip")
+2025-06-08 15:06:21.571 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:06:21.572 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: test_data2 = detect_and_handle_outliers_zscore(data=test_data1, columns=['Age', 'RoomService', 'FoodCourt', 'ShoppingMall', 'Spa', 'VRDeck'], threshold=3.0, method="clip")
+2025-06-08 15:06:21.588 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:06:21.588 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:06:21.588 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: train_data3 = one_hot_encode(data=train_data2, columns=['HomePlanet', 'CryoSleep', 'Destination', 'VIP'])
+2025-06-08 15:06:21.592 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:06:21.593 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: train_data3 = one_hot_encode(data=train_data2, columns=['HomePlanet', 'CryoSleep', 'Destination', 'VIP'])
+2025-06-08 15:06:21.607 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:06:21.607 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:06:21.608 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: test_data3 = one_hot_encode(data=test_data2, columns=['HomePlanet', 'CryoSleep', 'Destination', 'VIP'])
+2025-06-08 15:06:21.610 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:06:21.611 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: test_data3 = one_hot_encode(data=test_data2, columns=['HomePlanet', 'CryoSleep', 'Destination', 'VIP'])
+2025-06-08 15:06:21.620 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:06:21.620 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:06:21.621 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: train_data4 = label_encode(data=train_data3, columns=['Transported'])
+2025-06-08 15:06:21.627 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:06:21.628 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: train_data4 = label_encode(data=train_data3, columns=['Transported'])
+2025-06-08 15:06:21.637 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:06:21.637 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:07:58.950 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: result = train_xgboost_classifier(data="train_data", target="Transported", new_data="test_data", test_size=0.2, params={'objective': 'multi:softprob', 'num_class': 2, 'max_depth': 6, 'eta': 0.1, 'subsample': 0.8, 'colsample_bytree': 0.8, 'eval_metric': ['mlogloss', 'merror']}, num_boost_round=100, with_label=False)
+2025-06-08 15:07:58.957 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:07:58.959 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: result = train_xgboost_classifier(data="train_data", target="Transported", new_data="test_data", test_size=0.2, params={'objective': 'multi:softprob', 'num_class': 2, 'max_depth': 6, 'eta': 0.1, 'subsample': 0.8, 'colsample_bytree': 0.8, 'eval_metric': ['mlogloss', 'merror']}, num_boost_round=100, with_label=False)
+2025-06-08 15:07:59.168 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:07:59.169 | ERROR    | utils.local_interpreter:execute_code:122 - 执行错误: ---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+Cell In[20], line 1
+----> 1 result = train_xgboost_classifier(data="train_data", target="Transported", new_data="test_data", test_size=0.2, params={'objective': 'multi:softprob', 'num_class': 2, 'max_depth': 6, 'eta': 0.1, 'subsample': 0.8, 'colsample_bytree': 0.8, 'eval_metric': ['mlogloss', 'merror']}, num_boost_round=100, with_label=False)
+
+Fi
+... (内容已截断) ...
+       }
+
+File ~/A-Projects/Graduation/embedding/opencode/tool_code/machine_learning.py:45, in split_data(df, target_column, test_size, random_state)
+     44 def split_data(df: pd.DataFrame, target_column: str, test_size=0.2, random_state=None):
+---> 45     X = df.drop(columns=[target_column])
+     46     y = df[target_column]
+     47     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
+
+AttributeError: 'str' object has no attribute 'drop'
+2025-06-08 15:07:59.173 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: ['---------------------------------------------------------------------------\nAttributeError                            Traceback (most recent call last)\nCell In[20], line 1\n----> 1 result = train_xgboost_classifier(data="train_data", target="Transported", new_data="test_data", test_size=0.2, params={\'objective\': \'multi:softprob\', \'num_class\': 2, \'max_depth\': 6, \'eta\': 0.1, \'subsample\': 0.8, \'colsample_bytree\': 0.8, \'eval_metric\': [\'mlogloss\', \'merror\']}, num_boost_round=100, with_label=False)\n\nFi\n... (内容已截断) ...\n       }\n\nFile ~/A-Projects/Graduation/embedding/opencode/tool_code/machine_learning.py:45, in split_data(df, target_column, test_size, random_state)\n     44 def split_data(df: pd.DataFrame, target_column: str, test_size=0.2, random_state=None):\n---> 45     X = df.drop(columns=[target_column])\n     46     y = df[target_column]\n     47     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)\n\nAttributeError: \'str\' object has no attribute \'drop\'']
+2025-06-08 15:08:23.087 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: result = train_xgboost_classifier(data=train_data4, target="Transported", new_data=test_data3, test_size=0.2, params={'objective': 'multi:softprob', 'num_class': 2, 'max_depth': 6, 'eta': 0.1, 'subsample': 0.8, 'colsample_bytree': 0.8, 'eval_metric': ['mlogloss', 'merror']}, num_boost_round=100, with_label=False)
+2025-06-08 15:08:23.094 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:08:23.096 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: result = train_xgboost_classifier(data=train_data4, target="Transported", new_data=test_data3, test_size=0.2, params={'objective': 'multi:softprob', 'num_class': 2, 'max_depth': 6, 'eta': 0.1, 'subsample': 0.8, 'colsample_bytree': 0.8, 'eval_metric': ['mlogloss', 'merror']}, num_boost_round=100, with_label=False)
+2025-06-08 15:08:23.589 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:08:23.590 | ERROR    | utils.local_interpreter:execute_code:122 - 执行错误: ---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+File ~/anaconda3/envs/base1/lib/python3.10/site-packages/xgboost/data.py:407, in pandas_feature_info(data, meta, feature_names, feature_types, enable_categorical)
+    406 try:
+--> 407     new_feature_types.append(_pandas_dtype_mapper[dtype.name])
+    408 except KeyError:
+
+KeyError: 'object'
+
+During handling of the above exception, another excepti
+... (内容已截断) ...
+3.10/site-packages/xgboost/data.py:372, in _invalid_dataframe_dtype(data)
+    370 type_err = "DataFrame.dtypes for data must be int, float, bool or category."
+    371 msg = f"""{type_err} {_ENABLE_CAT_ERR} {err}"""
+--> 372 raise ValueError(msg)
+
+ValueError: DataFrame.dtypes for data must be int, float, bool or category. When categorical type is supplied, the experimental DMatrix parameter`enable_categorical` must be set to `True`.  Invalid columns:PassengerId: object, Cabin: object, Name: object
+2025-06-08 15:08:23.596 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: ['---------------------------------------------------------------------------\nKeyError                                  Traceback (most recent call last)\nFile ~/anaconda3/envs/base1/lib/python3.10/site-packages/xgboost/data.py:407, in pandas_feature_info(data, meta, feature_names, feature_types, enable_categorical)\n    406 try:\n--> 407     new_feature_types.append(_pandas_dtype_mapper[dtype.name])\n    408 except KeyError:\n\nKeyError: \'object\'\n\nDuring handling of the above exception, another excepti\n... (内容已截断) ...\n3.10/site-packages/xgboost/data.py:372, in _invalid_dataframe_dtype(data)\n    370 type_err = "DataFrame.dtypes for data must be int, float, bool or category."\n    371 msg = f"""{type_err} {_ENABLE_CAT_ERR} {err}"""\n--> 372 raise ValueError(msg)\n\nValueError: DataFrame.dtypes for data must be int, float, bool or category. When categorical type is supplied, the experimental DMatrix parameter`enable_categorical` must be set to `True`.  Invalid columns:PassengerId: object, Cabin: object, Name: object']
+2025-06-08 15:20:01.987 | INFO     | utils.local_interpreter:initialize:33 - 初始化本地内核
+2025-06-08 15:20:02.608 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import os
+work_dir = r'./'
+os.makedirs(work_dir, exist_ok=True)
+os.chdir(work_dir)
+print('当前工作目录:', os.getcwd())
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'DejaVu Sans', 'sans-serif']
+plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams['font.family'] = 'sans-serif'
+mpl.rcParams['font.size'] = 12
+mpl.rcParams['axes.labelsize'] = 12
+mpl.rcParams['xtick.labelsize'] = 10
+mpl.rcParams['ytick.labelsize'] = 10
+
+2025-06-08 15:20:07.189 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Dict, Any, Union, List,Optional
+2025-06-08 15:20:07.194 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:20:07.195 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Dict, Any, Union, List,Optional
+2025-06-08 15:20:07.459 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:20:07.459 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:20:07.461 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.data_clean import fill_missing_values
+2025-06-08 15:20:07.464 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:20:07.466 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.data_clean import fill_missing_values
+2025-06-08 15:20:07.472 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:20:07.472 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:20:07.612 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import networkx as nx
+2025-06-08 15:20:07.615 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:20:07.616 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import networkx as nx
+2025-06-08 15:20:07.711 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:20:07.711 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:20:07.712 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.graph_optimization import dijkstra
+2025-06-08 15:20:07.715 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:20:07.715 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.graph_optimization import dijkstra
+2025-06-08 15:20:07.721 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:20:07.721 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:21:45.618 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: result = dijkstra(edges={('A', 'B'): 2, ('A', 'C'): 6, ('B', 'D'): 3, ('B', 'E'): 7, ('C', 'B'): 5, ('C', 'D'): 4, ('D', 'E'): 1, ('D', 'F'): 4, ('E', 'F'): 6, ('E', 'G'): 7, ('F', 'G'): 6}, start="A", end="G")
+2025-06-08 15:21:45.621 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:21:45.622 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: result = dijkstra(edges={('A', 'B'): 2, ('A', 'C'): 6, ('B', 'D'): 3, ('B', 'E'): 7, ('C', 'B'): 5, ('C', 'D'): 4, ('D', 'E'): 1, ('D', 'F'): 4, ('E', 'F'): 6, ('E', 'G'): 7, ('F', 'G'): 6}, start="A", end="G")
+2025-06-08 15:21:45.632 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:21:45.632 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:29:07.601 | INFO     | utils.local_interpreter:initialize:33 - 初始化本地内核
+2025-06-08 15:29:08.203 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import os
+work_dir = r'./'
+os.makedirs(work_dir, exist_ok=True)
+os.chdir(work_dir)
+print('当前工作目录:', os.getcwd())
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'DejaVu Sans', 'sans-serif']
+plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams['font.family'] = 'sans-serif'
+mpl.rcParams['font.size'] = 12
+mpl.rcParams['axes.labelsize'] = 12
+mpl.rcParams['xtick.labelsize'] = 10
+mpl.rcParams['ytick.labelsize'] = 10
+
+2025-06-08 15:29:08.618 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Dict, Any, Union, List,Optional
+2025-06-08 15:29:08.620 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:29:08.621 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Dict, Any, Union, List,Optional
+2025-06-08 15:29:08.908 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:29:08.910 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:29:08.910 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.data_clean import fill_missing_values
+2025-06-08 15:29:08.912 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:29:08.913 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.data_clean import fill_missing_values
+2025-06-08 15:29:08.918 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:29:08.919 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:29:08.919 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import networkx as nx
+2025-06-08 15:29:08.920 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:29:08.921 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import networkx as nx
+2025-06-08 15:29:09.006 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:29:09.007 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:29:09.008 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.graph_optimization import dijkstra
+2025-06-08 15:29:09.010 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:29:09.011 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.graph_optimization import dijkstra
+2025-06-08 15:29:09.016 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:29:09.016 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:29:09.017 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: result = dijkstra(edges={('A', 'B'): 2, ('A', 'C'): 6, ('B', 'D'): 3, ('B', 'E'): 7, ('C', 'B'): 5, ('C', 'D'): 4, ('D', 'E'): 1, ('D', 'F'): 4, ('E', 'F'): 6, ('E', 'G'): 7, ('F', 'G'): 6}, start="A", end="G")
+2025-06-08 15:29:09.018 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:29:09.019 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: result = dijkstra(edges={('A', 'B'): 2, ('A', 'C'): 6, ('B', 'D'): 3, ('B', 'E'): 7, ('C', 'B'): 5, ('C', 'D'): 4, ('D', 'E'): 1, ('D', 'F'): 4, ('E', 'F'): 6, ('E', 'G'): 7, ('F', 'G'): 6}, start="A", end="G")
+2025-06-08 15:29:09.025 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:29:09.025 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:29:09.025 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: print(result)
+2025-06-08 15:29:09.027 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:29:09.027 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: print(result)
+2025-06-08 15:29:09.033 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:29:09.041 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: ['[stdout]\n13\n']
+2025-06-08 15:32:31.439 | INFO     | utils.local_interpreter:initialize:33 - 初始化本地内核
+2025-06-08 15:32:32.167 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import os
+work_dir = r'./'
+os.makedirs(work_dir, exist_ok=True)
+os.chdir(work_dir)
+print('当前工作目录:', os.getcwd())
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'DejaVu Sans', 'sans-serif']
+plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams['font.family'] = 'sans-serif'
+mpl.rcParams['font.size'] = 12
+mpl.rcParams['axes.labelsize'] = 12
+mpl.rcParams['xtick.labelsize'] = 10
+mpl.rcParams['ytick.labelsize'] = 10
+
+2025-06-08 15:32:32.562 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Dict, Any, Union, List,Optional
+2025-06-08 15:32:32.565 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:32:32.566 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Dict, Any, Union, List,Optional
+2025-06-08 15:32:32.830 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:32:32.831 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:32:32.831 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.data_clean import fill_missing_values
+2025-06-08 15:32:32.832 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:32:32.832 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.data_clean import fill_missing_values
+2025-06-08 15:32:32.838 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:32:32.838 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:32:32.927 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import networkx as nx
+2025-06-08 15:32:32.929 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:32:32.930 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import networkx as nx
+2025-06-08 15:32:33.021 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:32:33.021 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:32:33.021 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.graph_optimization import dijkstra
+2025-06-08 15:32:33.022 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:32:33.023 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.graph_optimization import dijkstra
+2025-06-08 15:32:33.028 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:32:33.029 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:32:33.029 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: result = dijkstra(edges={('A', 'B'): 2, ('A', 'C'): 6, ('B', 'D'): 3, ('B', 'E'): 7, ('C', 'B'): 5, ('C', 'D'): 4, ('D', 'E'): 1, ('D', 'F'): 4, ('E', 'F'): 6, ('E', 'G'): 7, ('F', 'G'): 6}, start="A", end="G")
+2025-06-08 15:32:33.030 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:32:33.030 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: result = dijkstra(edges={('A', 'B'): 2, ('A', 'C'): 6, ('B', 'D'): 3, ('B', 'E'): 7, ('C', 'B'): 5, ('C', 'D'): 4, ('D', 'E'): 1, ('D', 'F'): 4, ('E', 'F'): 6, ('E', 'G'): 7, ('F', 'G'): 6}, start="A", end="G")
+2025-06-08 15:32:33.037 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:32:33.037 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:32:33.037 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: print(result)
+2025-06-08 15:32:33.039 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:32:33.039 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: print(result)
+2025-06-08 15:32:33.044 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:32:33.051 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: ['[stdout]\n13\n']
+2025-06-08 15:37:43.135 | INFO     | utils.local_interpreter:initialize:33 - 初始化本地内核
+2025-06-08 15:37:43.788 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import os
+work_dir = r'./'
+os.makedirs(work_dir, exist_ok=True)
+os.chdir(work_dir)
+print('当前工作目录:', os.getcwd())
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'DejaVu Sans', 'sans-serif']
+plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams['font.family'] = 'sans-serif'
+mpl.rcParams['font.size'] = 12
+mpl.rcParams['axes.labelsize'] = 12
+mpl.rcParams['xtick.labelsize'] = 10
+mpl.rcParams['ytick.labelsize'] = 10
+
+2025-06-08 15:37:44.343 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from scipy.optimize import linprog
+import cvxpy as cp
+from scipy.optimize import minimize
+import numpy as np
+import pandas as pd
+from itertools import permutations
+import pulp
+import random
+import math
+import time
+2025-06-08 15:37:44.345 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:37:44.346 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from scipy.optimize import linprog
+import cvxpy as cp
+from scipy.optimize import minimize
+import numpy as np
+import pandas as pd
+from itertools import permutations
+import pulp
+import random
+import math
+import time
+2025-06-08 15:37:45.045 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:37:45.046 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:37:45.046 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.math_optimization import solve_lp
+2025-06-08 15:37:45.048 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:37:45.049 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.math_optimization import solve_lp
+2025-06-08 15:37:45.054 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:37:45.054 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:40:26.313 | INFO     | utils.local_interpreter:initialize:33 - 初始化本地内核
+2025-06-08 15:40:26.892 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import os
+work_dir = r'./'
+os.makedirs(work_dir, exist_ok=True)
+os.chdir(work_dir)
+print('当前工作目录:', os.getcwd())
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'DejaVu Sans', 'sans-serif']
+plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams['font.family'] = 'sans-serif'
+mpl.rcParams['font.size'] = 12
+mpl.rcParams['axes.labelsize'] = 12
+mpl.rcParams['xtick.labelsize'] = 10
+mpl.rcParams['ytick.labelsize'] = 10
+
+2025-06-08 15:40:28.493 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from scipy.optimize import linprog
+import cvxpy as cp
+from scipy.optimize import minimize
+import numpy as np
+import pandas as pd
+from itertools import permutations
+import pulp
+import random
+import math
+import time
+2025-06-08 15:40:28.497 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:40:28.498 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from scipy.optimize import linprog
+import cvxpy as cp
+from scipy.optimize import minimize
+import numpy as np
+import pandas as pd
+from itertools import permutations
+import pulp
+import random
+import math
+import time
+2025-06-08 15:40:29.201 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:40:29.201 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-08 15:40:29.201 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.math_optimization import solve_lp
+2025-06-08 15:40:29.203 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-08 15:40:29.203 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.math_optimization import solve_lp
+2025-06-08 15:40:29.209 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-08 15:40:29.209 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []

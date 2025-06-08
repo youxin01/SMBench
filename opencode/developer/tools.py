@@ -17,8 +17,8 @@ def info_pre2(question):
     file_names = os.listdir(dir_path)
     if "test.csv" in file_names:
         # 非时序问题
-        train_path = os.join(os.path.dirname(question),"train.csv")
-        test_path = os.join(os.path.dirname(question),"test.csv")
+        train_path = os.path.join(os.path.dirname(question),"train.csv")
+        test_path = os.path.join(os.path.dirname(question),"test.csv")
         train_data = pd.read_csv(train_path)
         test_data = pd.read_csv(test_path)
         info1 = show_info(train_data)
@@ -27,7 +27,7 @@ def info_pre2(question):
         info = f"{ques}\n\n #训练集信息\n{info1}\n\n #测试集信息\n{info2}\n\n #以下列应当弃用由于此列当中的特征数目在两数据集当中不一致\n{info3}"
     else:
         # 时序类问题
-        train_data = train_path = os.join(os.path.dirname(question),"train.csv")
+        train_data = train_path = os.path.join(os.path.dirname(question),"train.csv")
         info1 = show_info(train_data)
         info = f"{ques}\n\n # 训练集信息\n{info1}\n\n"
     return info

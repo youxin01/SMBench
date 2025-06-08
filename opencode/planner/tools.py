@@ -28,8 +28,8 @@ def get_plan(str_path):
 
 def info_pre(ques):
     question = read_file(ques)
-    train_path = os.join(os.path.dirname(ques),"train.csv")
-    test_path = os.join(os.path.dirname(ques),"test.csv")
+    train_path = os.path.join(os.path.dirname(ques),"train.csv")
+    test_path = os.path.join(os.path.dirname(ques),"test.csv")
     train_data = pd.read_csv(train_path)
     test_data = pd.read_csv(test_path)
     info1 = show_info(train_data)

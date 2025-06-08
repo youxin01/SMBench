@@ -1,0 +1,39 @@
+2025-06-06 22:12:00.119 | INFO     | utils.local_interpreter:initialize:33 - 初始化本地内核
+2025-06-06 22:12:00.798 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import os
+work_dir = r'./'
+os.makedirs(work_dir, exist_ok=True)
+os.chdir(work_dir)
+print('当前工作目录:', os.getcwd())
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'DejaVu Sans', 'sans-serif']
+plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams['font.family'] = 'sans-serif'
+mpl.rcParams['font.size'] = 12
+mpl.rcParams['axes.labelsize'] = 12
+mpl.rcParams['xtick.labelsize'] = 10
+mpl.rcParams['ytick.labelsize'] = 10
+
+2025-06-06 22:12:45.862 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+    import numpy as np
+    import networkx as nx
+2025-06-06 22:12:45.867 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-06 22:12:45.868 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+    import numpy as np
+    import networkx as nx
+2025-06-06 22:12:45.879 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-06 22:12:45.879 | ERROR    | utils.local_interpreter:execute_code:122 - 执行错误:   Cell In[2], line 2
+    import numpy as np
+    ^
+IndentationError: unexpected indent
+
+2025-06-06 22:12:45.882 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: ['  Cell In[2], line 2\n    import numpy as np\n    ^\nIndentationError: unexpected indent\n']
+2025-06-06 22:13:15.746 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+import networkx as nx
+2025-06-06 22:13:15.750 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-06 22:13:15.751 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+import networkx as nx
+2025-06-06 22:13:16.232 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-06 22:13:16.233 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
