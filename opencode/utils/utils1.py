@@ -77,6 +77,13 @@ def extract_functions(file_path):
 
     return parsed_results
 
+def extract_code(file_path):
+    with open(file_path, "r") as f:
+        md_str = f.read()
+    pattern = r"```python(.*?)```"
+    matches = re.findall(pattern, md_str, re.DOTALL)
+    return [m.strip() for m in matches]
+
 def convert_str_function(json_str):
     data = ast.literal_eval(json_str)
     results = []

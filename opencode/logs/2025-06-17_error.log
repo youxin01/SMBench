@@ -1,0 +1,1149 @@
+2025-06-17 18:16:03.644 | INFO     | utils.local_interpreter:initialize:33 - 初始化本地内核
+2025-06-17 18:16:04.442 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import os
+work_dir = r'./'
+os.makedirs(work_dir, exist_ok=True)
+os.chdir(work_dir)
+print('当前工作目录:', os.getcwd())
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'DejaVu Sans', 'sans-serif']
+plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams['font.family'] = 'sans-serif'
+mpl.rcParams['font.size'] = 12
+mpl.rcParams['axes.labelsize'] = 12
+mpl.rcParams['xtick.labelsize'] = 10
+mpl.rcParams['ytick.labelsize'] = 10
+
+2025-06-17 18:17:18.967 | INFO     | utils.local_interpreter:initialize:33 - 初始化本地内核
+2025-06-17 18:17:19.760 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import os
+work_dir = r'./'
+os.makedirs(work_dir, exist_ok=True)
+os.chdir(work_dir)
+print('当前工作目录:', os.getcwd())
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'DejaVu Sans', 'sans-serif']
+plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams['font.family'] = 'sans-serif'
+mpl.rcParams['font.size'] = 12
+mpl.rcParams['axes.labelsize'] = 12
+mpl.rcParams['xtick.labelsize'] = 10
+mpl.rcParams['ytick.labelsize'] = 10
+
+2025-06-17 18:19:47.227 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Dict, Any, Union, List,Optional
+2025-06-17 18:19:47.230 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 18:19:47.232 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Dict, Any, Union, List,Optional
+2025-06-17 18:19:47.482 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 18:19:47.483 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 18:19:47.483 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.data_clean import fill_missing_values
+2025-06-17 18:19:47.486 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 18:19:47.488 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.data_clean import fill_missing_values
+2025-06-17 18:19:47.495 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 18:19:47.495 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 18:19:47.496 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import List, Dict, Union
+from functools import reduce
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import os
+2025-06-17 18:19:47.498 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 18:19:47.499 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import List, Dict, Union
+from functools import reduce
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import os
+2025-06-17 18:19:47.818 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 18:19:47.819 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 18:19:47.820 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.feature_process import one_hot_encode
+2025-06-17 18:19:47.822 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 18:19:47.824 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.feature_process import one_hot_encode
+2025-06-17 18:19:47.828 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 18:19:47.828 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 18:19:47.828 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import List, Dict, Union
+from functools import reduce
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import os
+2025-06-17 18:19:47.831 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 18:19:47.832 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import List, Dict, Union
+from functools import reduce
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import os
+2025-06-17 18:19:47.836 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 18:19:47.836 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 18:19:47.837 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.feature_process import label_encode
+2025-06-17 18:19:47.839 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 18:19:47.841 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.feature_process import label_encode
+2025-06-17 18:19:47.844 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 18:19:47.845 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 18:19:48.527 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Callable
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression, LogisticRegression, RANSACRegressor
+from sklearn.metrics import mean_squared_error, accuracy_score, r2_score, classification_report
+from sklearn.preprocessing import PolynomialFeatures, MinMaxScaler
+from sklearn.pipeline import make_pipeline
+from sklearn.neighbors import KNeighborsClassifier
+import xgboost as xgb
+import lightgbm as lgb
+from scipy.interpolate import UnivariateSpline
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import DataLoader, TensorDataset
+from pmdarima import auto_arima
+import statsmodels.api as sm
+from sklearn.svm import SVC
+2025-06-17 18:19:48.530 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 18:19:48.532 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Callable
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression, LogisticRegression, RANSACRegressor
+from sklearn.metrics import mean_squared_error, accuracy_score, r2_score, classification_report
+from sklearn.preprocessing import PolynomialFeatures, MinMaxScaler
+from sklearn.pipeline import make_pipeline
+from sklearn.neighbors import KNeighborsClassifier
+import xgboost as xgb
+import lightgbm as lgb
+from scipy.interpolate import UnivariateSpline
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import DataLoader, TensorDataset
+from pmdarima import auto_arima
+import statsmodels.api as sm
+from sklearn.svm import SVC
+2025-06-17 18:19:50.458 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 18:19:50.459 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 18:19:50.459 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.machine_learning import train_lightgbm_classifier
+2025-06-17 18:19:50.462 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 18:19:50.464 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.machine_learning import train_lightgbm_classifier
+2025-06-17 18:19:50.473 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 18:19:50.473 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 18:22:03.474 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: train_data = pd.read_csv('./test_case/p1/train.csv')
+test_data = pd.read_csv('./test_case/p1/test.csv')
+2025-06-17 18:22:03.478 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 18:22:03.479 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: train_data = pd.read_csv('./test_case/p1/train.csv')
+test_data = pd.read_csv('./test_case/p1/test.csv')
+2025-06-17 18:22:03.516 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 18:22:03.516 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 18:22:30.269 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: train_data = fill_missing_values(data=train_data, columns=["HomePlanet", "CryoSleep", "Destination", "Age", "VIP", "RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"], strategy="mode")
+test_data = fill_missing_values(data=test_data, columns=["HomePlanet", "CryoSleep", "Destination", "Age", "VIP", "RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"], strategy="mode")
+
+2025-06-17 18:22:30.275 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 18:22:30.277 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: train_data = fill_missing_values(data=train_data, columns=["HomePlanet", "CryoSleep", "Destination", "Age", "VIP", "RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"], strategy="mode")
+test_data = fill_missing_values(data=test_data, columns=["HomePlanet", "CryoSleep", "Destination", "Age", "VIP", "RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"], strategy="mode")
+
+2025-06-17 18:22:30.305 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 18:22:30.306 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 18:22:54.832 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: # 独热编码
+train_data = one_hot_encode(data=train_data, columns=["HomePlanet", "CryoSleep", "Destination", "VIP"])
+test_data = one_hot_encode(data=test_data, columns=["HomePlanet", "CryoSleep", "Destination", "VIP"])
+
+# 标签编码目标变量
+train_data = label_encode(data=train_data, columns=["Transported"])
+2025-06-17 18:22:54.836 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 18:22:54.837 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: # 独热编码
+train_data = one_hot_encode(data=train_data, columns=["HomePlanet", "CryoSleep", "Destination", "VIP"])
+test_data = one_hot_encode(data=test_data, columns=["HomePlanet", "CryoSleep", "Destination", "VIP"])
+
+# 标签编码目标变量
+train_data = label_encode(data=train_data, columns=["Transported"])
+2025-06-17 18:22:54.860 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 18:22:54.861 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 18:23:13.372 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: # 阶段2：模型训练
+predictions = train_lightgbm_classifier(
+    data=train_data,
+    target="Transported",
+    new_data=test_data,
+    test_size=0.2,
+    params={
+        "objective": "binary",
+        "metric": "binary_logloss",
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+    },
+    num_boost_round=100,
+    with_label=False
+)
+2025-06-17 18:23:13.377 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 18:23:13.378 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: # 阶段2：模型训练
+predictions = train_lightgbm_classifier(
+    data=train_data,
+    target="Transported",
+    new_data=test_data,
+    test_size=0.2,
+    params={
+        "objective": "binary",
+        "metric": "binary_logloss",
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+    },
+    num_boost_round=100,
+    with_label=False
+)
+2025-06-17 18:23:14.237 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 18:23:14.238 | ERROR    | utils.local_interpreter:execute_code:122 - 执行错误: ---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+Cell In[13], line 2
+      1 # 阶段2：模型训练
+----> 2 predictions = train_lightgbm_classifier(
+      3     data=train_data,
+      4     target="Transported",
+      5     new_data=test_data,
+      6     test_size=0.2,
+      7     params={
+      8         "objective": "binary",
+      9         "metric": "binary_logloss",
+     10         "max_depth": 6,
+  
+... (内容已截断) ...
+ame}: {pandas_dtype}"
+    801     for column_name, pandas_dtype in pandas_dtypes_series.items()
+    802     if not _is_allowed_numpy_dtype(pandas_dtype.type)
+    803 ]
+    804 if bad_pandas_dtypes:
+--> 805     raise ValueError(
+    806         f"pandas dtypes must be int, float or bool.\nFields with bad pandas dtypes: {', '.join(bad_pandas_dtypes)}"
+    807     )
+
+ValueError: pandas dtypes must be int, float or bool.
+Fields with bad pandas dtypes: PassengerId: object, Cabin: object, Name: object
+2025-06-17 18:23:14.243 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: ['---------------------------------------------------------------------------\nValueError                                Traceback (most recent call last)\nCell In[13], line 2\n      1 # 阶段2：模型训练\n----> 2 predictions = train_lightgbm_classifier(\n      3     data=train_data,\n      4     target="Transported",\n      5     new_data=test_data,\n      6     test_size=0.2,\n      7     params={\n      8         "objective": "binary",\n      9         "metric": "binary_logloss",\n     10         "max_depth": 6,\n  \n... (内容已截断) ...\name}: {pandas_dtype}"\n    801     for column_name, pandas_dtype in pandas_dtypes_series.items()\n    802     if not _is_allowed_numpy_dtype(pandas_dtype.type)\n    803 ]\n    804 if bad_pandas_dtypes:\n--> 805     raise ValueError(\n    806         f"pandas dtypes must be int, float or bool.\\nFields with bad pandas dtypes: {\', \'.join(bad_pandas_dtypes)}"\n    807     )\n\nValueError: pandas dtypes must be int, float or bool.\nFields with bad pandas dtypes: PassengerId: object, Cabin: object, Name: object']
+2025-06-17 20:25:47.116 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: # 阶段2：模型训练
+predictions = train_lightgbm_classifier(
+    data=train_data,
+    target="Transported",
+    new_data=test_data,
+    test_size=0.2,
+    params={
+        "objective": "binary",
+        "metric": "binary_logloss",
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+    },
+    num_boost_round=100,
+    with_label=False
+)
+2025-06-17 20:25:47.122 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 20:25:47.123 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: # 阶段2：模型训练
+predictions = train_lightgbm_classifier(
+    data=train_data,
+    target="Transported",
+    new_data=test_data,
+    test_size=0.2,
+    params={
+        "objective": "binary",
+        "metric": "binary_logloss",
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+    },
+    num_boost_round=100,
+    with_label=False
+)
+2025-06-17 20:25:47.249 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 20:25:47.250 | ERROR    | utils.local_interpreter:execute_code:122 - 执行错误: ---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+Cell In[14], line 2
+      1 # 阶段2：模型训练
+----> 2 predictions = train_lightgbm_classifier(
+      3     data=train_data,
+      4     target="Transported",
+      5     new_data=test_data,
+      6     test_size=0.2,
+      7     params={
+      8         "objective": "binary",
+      9         "metric": "binary_logloss",
+     10         "max_depth": 6,
+  
+... (内容已截断) ...
+ame}: {pandas_dtype}"
+    801     for column_name, pandas_dtype in pandas_dtypes_series.items()
+    802     if not _is_allowed_numpy_dtype(pandas_dtype.type)
+    803 ]
+    804 if bad_pandas_dtypes:
+--> 805     raise ValueError(
+    806         f"pandas dtypes must be int, float or bool.\nFields with bad pandas dtypes: {', '.join(bad_pandas_dtypes)}"
+    807     )
+
+ValueError: pandas dtypes must be int, float or bool.
+Fields with bad pandas dtypes: PassengerId: object, Cabin: object, Name: object
+2025-06-17 20:25:47.255 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: ['---------------------------------------------------------------------------\nValueError                                Traceback (most recent call last)\nCell In[14], line 2\n      1 # 阶段2：模型训练\n----> 2 predictions = train_lightgbm_classifier(\n      3     data=train_data,\n      4     target="Transported",\n      5     new_data=test_data,\n      6     test_size=0.2,\n      7     params={\n      8         "objective": "binary",\n      9         "metric": "binary_logloss",\n     10         "max_depth": 6,\n  \n... (内容已截断) ...\name}: {pandas_dtype}"\n    801     for column_name, pandas_dtype in pandas_dtypes_series.items()\n    802     if not _is_allowed_numpy_dtype(pandas_dtype.type)\n    803 ]\n    804 if bad_pandas_dtypes:\n--> 805     raise ValueError(\n    806         f"pandas dtypes must be int, float or bool.\\nFields with bad pandas dtypes: {\', \'.join(bad_pandas_dtypes)}"\n    807     )\n\nValueError: pandas dtypes must be int, float or bool.\nFields with bad pandas dtypes: PassengerId: object, Cabin: object, Name: object']
+2025-06-17 20:26:03.276 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: # 阶段2：模型训练
+predictions = train_lightgbm_classifier(
+    data=train_data,
+    target="Transported",
+    new_data=test_data,
+    test_size=0.2,
+    params={
+        "objective": "binary",
+        "metric": "binary_logloss",
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+    },
+    num_boost_round=100,
+    with_label=False
+)
+2025-06-17 20:26:03.281 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 20:26:03.283 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: # 阶段2：模型训练
+predictions = train_lightgbm_classifier(
+    data=train_data,
+    target="Transported",
+    new_data=test_data,
+    test_size=0.2,
+    params={
+        "objective": "binary",
+        "metric": "binary_logloss",
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+    },
+    num_boost_round=100,
+    with_label=False
+)
+2025-06-17 20:26:03.407 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 20:26:03.408 | ERROR    | utils.local_interpreter:execute_code:122 - 执行错误: ---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+Cell In[15], line 2
+      1 # 阶段2：模型训练
+----> 2 predictions = train_lightgbm_classifier(
+      3     data=train_data,
+      4     target="Transported",
+      5     new_data=test_data,
+      6     test_size=0.2,
+      7     params={
+      8         "objective": "binary",
+      9         "metric": "binary_logloss",
+     10         "max_depth": 6,
+  
+... (内容已截断) ...
+ame}: {pandas_dtype}"
+    801     for column_name, pandas_dtype in pandas_dtypes_series.items()
+    802     if not _is_allowed_numpy_dtype(pandas_dtype.type)
+    803 ]
+    804 if bad_pandas_dtypes:
+--> 805     raise ValueError(
+    806         f"pandas dtypes must be int, float or bool.\nFields with bad pandas dtypes: {', '.join(bad_pandas_dtypes)}"
+    807     )
+
+ValueError: pandas dtypes must be int, float or bool.
+Fields with bad pandas dtypes: PassengerId: object, Cabin: object, Name: object
+2025-06-17 20:26:03.413 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: ['---------------------------------------------------------------------------\nValueError                                Traceback (most recent call last)\nCell In[15], line 2\n      1 # 阶段2：模型训练\n----> 2 predictions = train_lightgbm_classifier(\n      3     data=train_data,\n      4     target="Transported",\n      5     new_data=test_data,\n      6     test_size=0.2,\n      7     params={\n      8         "objective": "binary",\n      9         "metric": "binary_logloss",\n     10         "max_depth": 6,\n  \n... (内容已截断) ...\name}: {pandas_dtype}"\n    801     for column_name, pandas_dtype in pandas_dtypes_series.items()\n    802     if not _is_allowed_numpy_dtype(pandas_dtype.type)\n    803 ]\n    804 if bad_pandas_dtypes:\n--> 805     raise ValueError(\n    806         f"pandas dtypes must be int, float or bool.\\nFields with bad pandas dtypes: {\', \'.join(bad_pandas_dtypes)}"\n    807     )\n\nValueError: pandas dtypes must be int, float or bool.\nFields with bad pandas dtypes: PassengerId: object, Cabin: object, Name: object']
+2025-06-17 20:38:12.348 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: predictions = train_lightgbm_classifier(
+    data=train_data.drop(["PassengerId", "Cabin", "Name"], axis=1),  # 删除object类型的列
+    target="Transported",
+    new_data=test_data.drop(["PassengerId", "Cabin", "Name"], axis=1),  # 删除object类型的列
+    test_size=0.2,
+    params={
+        "objective": "binary",
+        "metric": "binary_logloss",
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+    },
+    num_boost_round=100,
+    with_label=False
+)
+2025-06-17 20:38:12.351 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 20:38:12.352 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: predictions = train_lightgbm_classifier(
+    data=train_data.drop(["PassengerId", "Cabin", "Name"], axis=1),  # 删除object类型的列
+    target="Transported",
+    new_data=test_data.drop(["PassengerId", "Cabin", "Name"], axis=1),  # 删除object类型的列
+    test_size=0.2,
+    params={
+        "objective": "binary",
+        "metric": "binary_logloss",
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+    },
+    num_boost_round=100,
+    with_label=False
+)
+2025-06-17 20:40:31.919 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 20:40:32.278 | ERROR    | utils.local_interpreter:execute_code:122 - 执行错误: ---------------------------------------------------------------------------
+AxisError                                 Traceback (most recent call last)
+Cell In[16], line 1
+----> 1 predictions = train_lightgbm_classifier(
+      2     data=train_data.drop(["PassengerId", "Cabin", "Name"], axis=1),  # 删除object类型的列
+      3     target="Transported",
+      4     new_data=test_data.drop(["PassengerId", "Cabin", "Name"], axis=1),  # 删除object类型的列
+      5     test_size=0.2,
+      6     params={
+      7   
+... (内容已截断) ...
+gs, **kwds)
+     58 try:
+---> 59     return bound(*args, **kwds)
+     60 except TypeError:
+     61     # A TypeError occurs if the object does have such a method in its
+     62     # class, but its signature is not identical to that of NumPy's. This
+   (...)
+     66     # Call _wrapit from within the except clause to ensure a potential
+     67     # exception has a traceback chain.
+     68     return _wrapit(obj, method, *args, **kwds)
+
+AxisError: axis 1 is out of bounds for array of dimension 1
+2025-06-17 20:40:32.285 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: ["[stdout]\n[LightGBM] [Warning] Provided parameters constrain tree depth (max_depth=6) without explicitly setting 'num_leaves'. This can lead to underfitting. To resolve this warning, pass 'num_leaves' (<=64) in params. Alternatively, pass (max_depth=-1) and just use 'num_leaves' to constrain model complexity.\n[LightGBM] [Warning] Found whitespace in feature_names, replace with underlines\n[LightGBM] [Warning] Provided parameters constrain tree depth (max_depth=6) without explicitly setting 'num_leaves'. This can lead to underfitting. To resolve this warning, pass 'num_leaves' (<=64) in params. Alternatively, pass (max_depth=-1) and just use 'num_leaves' to constrain model complexity.\n[LightGBM] [Info] Number of positive: 3503, number of negative: 3451\n", "[stdout]\n[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.173649 seconds.\nYou can set `force_row_wise=true` to remove the overhead.\nAnd if memory is not enough, you can set `force_col_wise=true`.\n[LightGBM] [Info] Total Bins 1373\n[LightGBM] [Info] Number of data points in the train set: 6954, number of used features: 16\n[LightGBM] [Warning] Provided parameters constrain tree depth (max_depth=6) without explicitly setting 'num_leaves'. This can lead to underfitting. To resolve this warning, pass 'num_leaves' (<=64) in params. Alternatively, pass (max_depth=-1) and just use 'num_leaves' to constrain model complexity.\n[LightGBM] [Warning] Found whitespace in feature_names, replace with underlines\n[LightGBM] [Info] [binary:BoostFromScore]: pavg=0.503739 -> initscore=0.014956\n[LightGBM] [Info] Start training from score 0.014956\n", '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '---------------------------------------------------------------------------\nAxisError                                 Traceback (most recent call last)\nCell In[16], line 1\n----> 1 predictions = train_lightgbm_classifier(\n      2     data=train_data.drop(["PassengerId", "Cabin", "Name"], axis=1),  # 删除object类型的列\n      3     target="Transported",\n      4     new_data=test_data.drop(["PassengerId", "Cabin", "Name"], axis=1),  # 删除object类型的列\n      5     test_size=0.2,\n      6     params={\n      7   \n... (内容已截断) ...\ngs, **kwds)\n     58 try:\n---> 59     return bound(*args, **kwds)\n     60 except TypeError:\n     61     # A TypeError occurs if the object does have such a method in its\n     62     # class, but its signature is not identical to that of NumPy\'s. This\n   (...)\n     66     # Call _wrapit from within the except clause to ensure a potential\n     67     # exception has a traceback chain.\n     68     return _wrapit(obj, method, *args, **kwds)\n\nAxisError: axis 1 is out of bounds for array of dimension 1']
+2025-06-17 20:43:15.092 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: train_data.to_csv('train_data1.csv', index=False)
+
+2025-06-17 20:43:15.105 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 20:43:15.106 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: train_data.to_csv('train_data1.csv', index=False)
+
+2025-06-17 20:43:15.162 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 20:43:15.162 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 20:46:09.863 | INFO     | utils.local_interpreter:cleanup:218 - 关闭内核
+2025-06-17 20:46:29.924 | INFO     | utils.local_interpreter:initialize:33 - 初始化本地内核
+2025-06-17 20:46:30.493 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import os
+work_dir = r'./'
+os.makedirs(work_dir, exist_ok=True)
+os.chdir(work_dir)
+print('当前工作目录:', os.getcwd())
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'DejaVu Sans', 'sans-serif']
+plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams['font.family'] = 'sans-serif'
+mpl.rcParams['font.size'] = 12
+mpl.rcParams['axes.labelsize'] = 12
+mpl.rcParams['xtick.labelsize'] = 10
+mpl.rcParams['ytick.labelsize'] = 10
+
+2025-06-17 20:46:47.587 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Dict, Any, Union, List,Optional
+2025-06-17 20:46:47.590 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 20:46:47.591 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Dict, Any, Union, List,Optional
+2025-06-17 20:46:47.866 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 20:46:47.871 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 20:46:47.872 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.data_clean import fill_missing_values
+2025-06-17 20:46:47.875 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 20:46:47.875 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.data_clean import fill_missing_values
+2025-06-17 20:46:47.883 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 20:46:47.883 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 20:46:47.884 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import List, Dict, Union
+from functools import reduce
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import os
+2025-06-17 20:46:47.886 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 20:46:47.886 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import List, Dict, Union
+from functools import reduce
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import os
+2025-06-17 20:46:48.206 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 20:46:48.206 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 20:46:48.206 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.feature_process import one_hot_encode
+2025-06-17 20:46:48.208 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 20:46:48.209 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.feature_process import one_hot_encode
+2025-06-17 20:46:48.213 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 20:46:48.213 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 20:46:48.213 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import List, Dict, Union
+from functools import reduce
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import os
+2025-06-17 20:46:48.215 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 20:46:48.216 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import List, Dict, Union
+from functools import reduce
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import os
+2025-06-17 20:46:48.221 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 20:46:48.221 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 20:46:48.222 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.feature_process import label_encode
+2025-06-17 20:46:48.224 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 20:46:48.225 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.feature_process import label_encode
+2025-06-17 20:46:48.230 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 20:46:48.230 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 20:46:48.231 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Callable
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression, LogisticRegression, RANSACRegressor
+from sklearn.metrics import mean_squared_error, accuracy_score, r2_score, classification_report
+from sklearn.preprocessing import PolynomialFeatures, MinMaxScaler
+from sklearn.pipeline import make_pipeline
+from sklearn.neighbors import KNeighborsClassifier
+import xgboost as xgb
+import lightgbm as lgb
+from scipy.interpolate import UnivariateSpline
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import DataLoader, TensorDataset
+from pmdarima import auto_arima
+import statsmodels.api as sm
+from sklearn.svm import SVC
+2025-06-17 20:46:48.234 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 20:46:48.235 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Callable
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression, LogisticRegression, RANSACRegressor
+from sklearn.metrics import mean_squared_error, accuracy_score, r2_score, classification_report
+from sklearn.preprocessing import PolynomialFeatures, MinMaxScaler
+from sklearn.pipeline import make_pipeline
+from sklearn.neighbors import KNeighborsClassifier
+import xgboost as xgb
+import lightgbm as lgb
+from scipy.interpolate import UnivariateSpline
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import DataLoader, TensorDataset
+from pmdarima import auto_arima
+import statsmodels.api as sm
+from sklearn.svm import SVC
+2025-06-17 20:46:50.137 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 20:46:50.137 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 20:46:50.137 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.machine_learning import train_lightgbm_classifier
+2025-06-17 20:46:50.140 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 20:46:50.141 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.machine_learning import train_lightgbm_classifier
+2025-06-17 20:46:50.147 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 20:46:50.148 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 20:47:36.328 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: # 读取数据
+train_data = pd.read_csv('./test_case/p1/train.csv')
+test_data = pd.read_csv('./test_case/p1/test.csv')
+
+# 阶段1：数据预处理
+# 填充缺失值
+train_data = fill_missing_values(data=train_data, columns=["HomePlanet", "CryoSleep", "Destination", "Age", "VIP", "RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"], strategy="mode")
+test_data = fill_missing_values(data=test_data, columns=["HomePlanet", "CryoSleep", "Destination", "Age", "VIP", "RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"], strategy="mode")
+
+# 独热编码
+train_data = one_hot_encode(data=train_data, columns=["HomePlanet", "CryoSleep", "Destination", "VIP"])
+test_data = one_hot_encode(data=test_data, columns=["HomePlanet", "CryoSleep", "Destination", "VIP"])
+
+# 标签编码目标变量
+train_data = label_encode(data=train_data, columns=["Transported"])
+2025-06-17 20:47:36.333 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 20:47:36.334 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: # 读取数据
+train_data = pd.read_csv('./test_case/p1/train.csv')
+test_data = pd.read_csv('./test_case/p1/test.csv')
+
+# 阶段1：数据预处理
+# 填充缺失值
+train_data = fill_missing_values(data=train_data, columns=["HomePlanet", "CryoSleep", "Destination", "Age", "VIP", "RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"], strategy="mode")
+test_data = fill_missing_values(data=test_data, columns=["HomePlanet", "CryoSleep", "Destination", "Age", "VIP", "RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"], strategy="mode")
+
+# 独热编码
+train_data = one_hot_encode(data=train_data, columns=["HomePlanet", "CryoSleep", "Destination", "VIP"])
+test_data = one_hot_encode(data=test_data, columns=["HomePlanet", "CryoSleep", "Destination", "VIP"])
+
+# 标签编码目标变量
+train_data = label_encode(data=train_data, columns=["Transported"])
+2025-06-17 20:47:36.396 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 20:47:36.396 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 20:47:52.673 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: train_data.to_csv('train_data1.csv', index=False)
+
+2025-06-17 20:47:52.677 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 20:47:52.678 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: train_data.to_csv('train_data1.csv', index=False)
+
+2025-06-17 20:47:52.731 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 20:47:52.732 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 20:48:29.425 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: predictions = train_lightgbm_classifier(
+    data=train_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if train_data.ndim > 1 else train_data,  # 添加维度检查
+    target="Transported",
+    new_data=test_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if test_data.ndim > 1 else test_data,  # 添加维度检查
+    test_size=0.2,
+    params={
+        "objective": "binary",
+        "metric": "binary_logloss",
+        "max_depth": 6,
+        "num_leaves": 31,  # 添加num_leaves参数
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+    },
+    num_boost_round=100,
+    with_label=False
+)
+2025-06-17 20:48:29.429 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 20:48:29.430 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: predictions = train_lightgbm_classifier(
+    data=train_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if train_data.ndim > 1 else train_data,  # 添加维度检查
+    target="Transported",
+    new_data=test_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if test_data.ndim > 1 else test_data,  # 添加维度检查
+    test_size=0.2,
+    params={
+        "objective": "binary",
+        "metric": "binary_logloss",
+        "max_depth": 6,
+        "num_leaves": 31,  # 添加num_leaves参数
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+    },
+    num_boost_round=100,
+    with_label=False
+)
+2025-06-17 20:50:45.829 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 20:50:46.436 | ERROR    | utils.local_interpreter:execute_code:122 - 执行错误: ---------------------------------------------------------------------------
+AxisError                                 Traceback (most recent call last)
+Cell In[12], line 1
+----> 1 predictions = train_lightgbm_classifier(
+      2     data=train_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if train_data.ndim > 1 else train_data,  # 添加维度检查
+      3     target="Transported",
+      4     new_data=test_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if test_data.ndim > 1 else test_data,  # 添
+... (内容已截断) ...
+gs, **kwds)
+     58 try:
+---> 59     return bound(*args, **kwds)
+     60 except TypeError:
+     61     # A TypeError occurs if the object does have such a method in its
+     62     # class, but its signature is not identical to that of NumPy's. This
+   (...)
+     66     # Call _wrapit from within the except clause to ensure a potential
+     67     # exception has a traceback chain.
+     68     return _wrapit(obj, method, *args, **kwds)
+
+AxisError: axis 1 is out of bounds for array of dimension 1
+2025-06-17 20:50:46.443 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: ['[stdout]\n[LightGBM] [Warning] Found whitespace in feature_names, replace with underlines\n[LightGBM] [Info] Number of positive: 3493, number of negative: 3461\n', '[stdout]\n[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.208054 seconds.\nYou can set `force_row_wise=true` to remove the overhead.\nAnd if memory is not enough, you can set `force_col_wise=true`.\n[LightGBM] [Info] Total Bins 1373\n[LightGBM] [Info] Number of data points in the train set: 6954, number of used features: 16\n[LightGBM] [Warning] Found whitespace in feature_names, replace with underlines\n[LightGBM] [Info] [binary:BoostFromScore]: pavg=0.502301 -> initscore=0.009203\n[LightGBM] [Info] Start training from score 0.009203\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '---------------------------------------------------------------------------\nAxisError                                 Traceback (most recent call last)\nCell In[12], line 1\n----> 1 predictions = train_lightgbm_classifier(\n      2     data=train_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if train_data.ndim > 1 else train_data,  # 添加维度检查\n      3     target="Transported",\n      4     new_data=test_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if test_data.ndim > 1 else test_data,  # 添\n... (内容已截断) ...\ngs, **kwds)\n     58 try:\n---> 59     return bound(*args, **kwds)\n     60 except TypeError:\n     61     # A TypeError occurs if the object does have such a method in its\n     62     # class, but its signature is not identical to that of NumPy\'s. This\n   (...)\n     66     # Call _wrapit from within the except clause to ensure a potential\n     67     # exception has a traceback chain.\n     68     return _wrapit(obj, method, *args, **kwds)\n\nAxisError: axis 1 is out of bounds for array of dimension 1']
+2025-06-17 20:56:41.878 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: train_data=train_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if train_data.ndim > 1 else train_data# 添加维度检查
+    test_data=test_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if test_data.ndim > 1 else test_data # 添加维度检查
+
+2025-06-17 20:56:41.890 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 20:56:41.891 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: train_data=train_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if train_data.ndim > 1 else train_data# 添加维度检查
+    test_data=test_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if test_data.ndim > 1 else test_data # 添加维度检查
+
+2025-06-17 20:56:41.902 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 20:56:41.903 | ERROR    | utils.local_interpreter:execute_code:122 - 执行错误:   Cell In[13], line 2
+    test_data=test_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if test_data.ndim > 1 else test_data # 添加维度检查
+    ^
+IndentationError: unexpected indent
+
+2025-06-17 20:56:41.915 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: ['  Cell In[13], line 2\n    test_data=test_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if test_data.ndim > 1 else test_data # 添加维度检查\n    ^\nIndentationError: unexpected indent\n']
+2025-06-17 20:57:03.078 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: train_data=train_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if train_data.ndim > 1 else train_data# 添加维度检查
+test_data=test_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if test_data.ndim > 1 else test_data # 添加维度检查
+
+2025-06-17 20:57:03.091 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 20:57:03.093 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: train_data=train_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if train_data.ndim > 1 else train_data# 添加维度检查
+test_data=test_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if test_data.ndim > 1 else test_data # 添加维度检查
+
+2025-06-17 20:57:03.104 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 20:57:03.104 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 20:57:40.458 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: # 阶段2：模型训练
+predictions = train_lightgbm_classifier(
+    data=train_data,
+    target="Transported",
+    new_data=test_data,
+    test_size=0.2,
+    params={
+        "objective": "binary",
+        "metric": "binary_logloss",
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+    },
+    num_boost_round=100,
+    with_label=False
+)
+2025-06-17 20:57:40.470 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 20:57:40.471 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: # 阶段2：模型训练
+predictions = train_lightgbm_classifier(
+    data=train_data,
+    target="Transported",
+    new_data=test_data,
+    test_size=0.2,
+    params={
+        "objective": "binary",
+        "metric": "binary_logloss",
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+    },
+    num_boost_round=100,
+    with_label=False
+)
+2025-06-17 20:59:56.004 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 20:59:56.595 | ERROR    | utils.local_interpreter:execute_code:122 - 执行错误: ---------------------------------------------------------------------------
+AxisError                                 Traceback (most recent call last)
+Cell In[15], line 2
+      1 # 阶段2：模型训练
+----> 2 predictions = train_lightgbm_classifier(
+      3     data=train_data,
+      4     target="Transported",
+      5     new_data=test_data,
+      6     test_size=0.2,
+      7     params={
+      8         "objective": "binary",
+      9         "metric": "binary_logloss",
+     10         "max_depth": 6,
+  
+... (内容已截断) ...
+gs, **kwds)
+     58 try:
+---> 59     return bound(*args, **kwds)
+     60 except TypeError:
+     61     # A TypeError occurs if the object does have such a method in its
+     62     # class, but its signature is not identical to that of NumPy's. This
+   (...)
+     66     # Call _wrapit from within the except clause to ensure a potential
+     67     # exception has a traceback chain.
+     68     return _wrapit(obj, method, *args, **kwds)
+
+AxisError: axis 1 is out of bounds for array of dimension 1
+2025-06-17 20:59:56.606 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: ["[stdout]\n[LightGBM] [Warning] Provided parameters constrain tree depth (max_depth=6) without explicitly setting 'num_leaves'. This can lead to underfitting. To resolve this warning, pass 'num_leaves' (<=64) in params. Alternatively, pass (max_depth=-1) and just use 'num_leaves' to constrain model complexity.\n[LightGBM] [Warning] Found whitespace in feature_names, replace with underlines\n[LightGBM] [Warning] Provided parameters constrain tree depth (max_depth=6) without explicitly setting 'num_leaves'. This can lead to underfitting. To resolve this warning, pass 'num_leaves' (<=64) in params. Alternatively, pass (max_depth=-1) and just use 'num_leaves' to constrain model complexity.\n[LightGBM] [Info] Number of positive: 3507, number of negative: 3447\n", "[stdout]\n[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.166148 seconds.\nYou can set `force_row_wise=true` to remove the overhead.\nAnd if memory is not enough, you can set `force_col_wise=true`.\n[LightGBM] [Info] Total Bins 1373\n[LightGBM] [Info] Number of data points in the train set: 6954, number of used features: 16\n[LightGBM] [Warning] Provided parameters constrain tree depth (max_depth=6) without explicitly setting 'num_leaves'. This can lead to underfitting. To resolve this warning, pass 'num_leaves' (<=64) in params. Alternatively, pass (max_depth=-1) and just use 'num_leaves' to constrain model complexity.\n[LightGBM] [Warning] Found whitespace in feature_names, replace with underlines\n[LightGBM] [Info] [binary:BoostFromScore]: pavg=0.504314 -> initscore=0.017257\n[LightGBM] [Info] Start training from score 0.017257\n", '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '---------------------------------------------------------------------------\nAxisError                                 Traceback (most recent call last)\nCell In[15], line 2\n      1 # 阶段2：模型训练\n----> 2 predictions = train_lightgbm_classifier(\n      3     data=train_data,\n      4     target="Transported",\n      5     new_data=test_data,\n      6     test_size=0.2,\n      7     params={\n      8         "objective": "binary",\n      9         "metric": "binary_logloss",\n     10         "max_depth": 6,\n  \n... (内容已截断) ...\ngs, **kwds)\n     58 try:\n---> 59     return bound(*args, **kwds)\n     60 except TypeError:\n     61     # A TypeError occurs if the object does have such a method in its\n     62     # class, but its signature is not identical to that of NumPy\'s. This\n   (...)\n     66     # Call _wrapit from within the except clause to ensure a potential\n     67     # exception has a traceback chain.\n     68     return _wrapit(obj, method, *args, **kwds)\n\nAxisError: axis 1 is out of bounds for array of dimension 1']
+2025-06-17 21:05:34.914 | INFO     | utils.local_interpreter:cleanup:218 - 关闭内核
+2025-06-17 21:05:47.503 | INFO     | utils.local_interpreter:initialize:33 - 初始化本地内核
+2025-06-17 21:05:48.075 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import os
+work_dir = r'./'
+os.makedirs(work_dir, exist_ok=True)
+os.chdir(work_dir)
+print('当前工作目录:', os.getcwd())
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'DejaVu Sans', 'sans-serif']
+plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams['font.family'] = 'sans-serif'
+mpl.rcParams['font.size'] = 12
+mpl.rcParams['axes.labelsize'] = 12
+mpl.rcParams['xtick.labelsize'] = 10
+mpl.rcParams['ytick.labelsize'] = 10
+
+2025-06-17 21:06:18.334 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Dict, Any, Union, List,Optional
+2025-06-17 21:06:18.338 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 21:06:18.339 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Dict, Any, Union, List,Optional
+2025-06-17 21:06:18.610 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 21:06:18.610 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 21:06:18.611 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.data_clean import fill_missing_values
+2025-06-17 21:06:18.614 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 21:06:18.617 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.data_clean import fill_missing_values
+2025-06-17 21:06:18.624 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 21:06:18.625 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 21:06:18.625 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import List, Dict, Union
+from functools import reduce
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import os
+2025-06-17 21:06:18.626 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 21:06:18.627 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import List, Dict, Union
+from functools import reduce
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import os
+2025-06-17 21:06:18.953 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 21:06:18.953 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 21:06:18.953 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.feature_process import one_hot_encode
+2025-06-17 21:06:18.955 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 21:06:18.957 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.feature_process import one_hot_encode
+2025-06-17 21:06:18.961 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 21:06:18.962 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 21:06:18.962 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import List, Dict, Union
+from functools import reduce
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import os
+2025-06-17 21:06:18.965 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 21:06:18.966 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import List, Dict, Union
+from functools import reduce
+from sklearn.preprocessing import LabelEncoder
+import pickle
+import os
+2025-06-17 21:06:18.970 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 21:06:18.970 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 21:06:18.971 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.feature_process import label_encode
+2025-06-17 21:06:18.973 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 21:06:18.974 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.feature_process import label_encode
+2025-06-17 21:06:18.977 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 21:06:18.977 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 21:06:18.978 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Callable
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression, LogisticRegression, RANSACRegressor
+from sklearn.metrics import mean_squared_error, accuracy_score, r2_score, classification_report
+from sklearn.preprocessing import PolynomialFeatures, MinMaxScaler
+from sklearn.pipeline import make_pipeline
+from sklearn.neighbors import KNeighborsClassifier
+import xgboost as xgb
+import lightgbm as lgb
+from scipy.interpolate import UnivariateSpline
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import DataLoader, TensorDataset
+from pmdarima import auto_arima
+import statsmodels.api as sm
+from sklearn.svm import SVC
+2025-06-17 21:06:18.980 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 21:06:18.981 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: import pandas as pd
+import numpy as np
+from typing import Callable
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression, LogisticRegression, RANSACRegressor
+from sklearn.metrics import mean_squared_error, accuracy_score, r2_score, classification_report
+from sklearn.preprocessing import PolynomialFeatures, MinMaxScaler
+from sklearn.pipeline import make_pipeline
+from sklearn.neighbors import KNeighborsClassifier
+import xgboost as xgb
+import lightgbm as lgb
+from scipy.interpolate import UnivariateSpline
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.utils.data import DataLoader, TensorDataset
+from pmdarima import auto_arima
+import statsmodels.api as sm
+from sklearn.svm import SVC
+2025-06-17 21:06:20.852 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 21:06:20.852 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 21:06:20.853 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: from tool_code.machine_learning import train_lightgbm_classifier
+2025-06-17 21:06:20.855 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 21:06:20.855 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: from tool_code.machine_learning import train_lightgbm_classifier
+2025-06-17 21:06:20.870 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 21:06:20.870 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 21:06:59.684 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: # 读取数据
+train_data = pd.read_csv('./test_case/p1/train.csv')
+test_data = pd.read_csv('./test_case/p1/test.csv')
+
+# 阶段1：数据预处理
+# 填充缺失值
+train_data = fill_missing_values(data=train_data, columns=["HomePlanet", "CryoSleep", "Destination", "Age", "VIP", "RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"], strategy="mode")
+test_data = fill_missing_values(data=test_data, columns=["HomePlanet", "CryoSleep", "Destination", "Age", "VIP", "RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"], strategy="mode")
+
+# 独热编码
+train_data = one_hot_encode(data=train_data, columns=["HomePlanet", "CryoSleep", "Destination", "VIP"])
+test_data = one_hot_encode(data=test_data, columns=["HomePlanet", "CryoSleep", "Destination", "VIP"])
+
+# 标签编码目标变量
+train_data = label_encode(data=train_data, columns=["Transported"])
+
+2025-06-17 21:06:59.688 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 21:06:59.688 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: # 读取数据
+train_data = pd.read_csv('./test_case/p1/train.csv')
+test_data = pd.read_csv('./test_case/p1/test.csv')
+
+# 阶段1：数据预处理
+# 填充缺失值
+train_data = fill_missing_values(data=train_data, columns=["HomePlanet", "CryoSleep", "Destination", "Age", "VIP", "RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"], strategy="mode")
+test_data = fill_missing_values(data=test_data, columns=["HomePlanet", "CryoSleep", "Destination", "Age", "VIP", "RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"], strategy="mode")
+
+# 独热编码
+train_data = one_hot_encode(data=train_data, columns=["HomePlanet", "CryoSleep", "Destination", "VIP"])
+test_data = one_hot_encode(data=test_data, columns=["HomePlanet", "CryoSleep", "Destination", "VIP"])
+
+# 标签编码目标变量
+train_data = label_encode(data=train_data, columns=["Transported"])
+
+2025-06-17 21:06:59.750 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 21:06:59.751 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 21:07:37.908 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: predictions = train_lightgbm_classifier(
+    data=train_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if train_data.ndim > 1 else train_data,  # 添加维度检查
+    target="Transported",
+    new_data=test_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if test_data.ndim > 1 else test_data,  # 添加维度检查
+    test_size=0.2,
+    params={
+        "objective": "binary",
+        "metric": "binary_logloss",
+        "max_depth": 6,
+        "num_leaves": 31,  # 添加num_leaves参数
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+    },
+    num_boost_round=100,
+    with_label=False
+)
+2025-06-17 21:07:37.913 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 21:07:37.914 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: predictions = train_lightgbm_classifier(
+    data=train_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if train_data.ndim > 1 else train_data,  # 添加维度检查
+    target="Transported",
+    new_data=test_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if test_data.ndim > 1 else test_data,  # 添加维度检查
+    test_size=0.2,
+    params={
+        "objective": "binary",
+        "metric": "binary_logloss",
+        "max_depth": 6,
+        "num_leaves": 31,  # 添加num_leaves参数
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+    },
+    num_boost_round=100,
+    with_label=False
+)
+2025-06-17 21:09:54.365 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 21:09:54.687 | ERROR    | utils.local_interpreter:execute_code:122 - 执行错误: ---------------------------------------------------------------------------
+AxisError                                 Traceback (most recent call last)
+Cell In[11], line 1
+----> 1 predictions = train_lightgbm_classifier(
+      2     data=train_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if train_data.ndim > 1 else train_data,  # 添加维度检查
+      3     target="Transported",
+      4     new_data=test_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if test_data.ndim > 1 else test_data,  # 添
+... (内容已截断) ...
+gs, **kwds)
+     58 try:
+---> 59     return bound(*args, **kwds)
+     60 except TypeError:
+     61     # A TypeError occurs if the object does have such a method in its
+     62     # class, but its signature is not identical to that of NumPy's. This
+   (...)
+     66     # Call _wrapit from within the except clause to ensure a potential
+     67     # exception has a traceback chain.
+     68     return _wrapit(obj, method, *args, **kwds)
+
+AxisError: axis 1 is out of bounds for array of dimension 1
+2025-06-17 21:09:54.693 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: ['[stdout]\n[LightGBM] [Warning] Found whitespace in feature_names, replace with underlines\n[LightGBM] [Info] Number of positive: 3492, number of negative: 3462\n', '[stdout]\n[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.168837 seconds.\nYou can set `force_row_wise=true` to remove the overhead.\nAnd if memory is not enough, you can set `force_col_wise=true`.\n[LightGBM] [Info] Total Bins 1373\n[LightGBM] [Info] Number of data points in the train set: 6954, number of used features: 16\n[LightGBM] [Warning] Found whitespace in feature_names, replace with underlines\n[LightGBM] [Info] [binary:BoostFromScore]: pavg=0.502157 -> initscore=0.008628\n[LightGBM] [Info] Start training from score 0.008628\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '[stdout]\n[LightGBM] [Warning] No further splits with positive gain, best gain: -inf\n', '---------------------------------------------------------------------------\nAxisError                                 Traceback (most recent call last)\nCell In[11], line 1\n----> 1 predictions = train_lightgbm_classifier(\n      2     data=train_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if train_data.ndim > 1 else train_data,  # 添加维度检查\n      3     target="Transported",\n      4     new_data=test_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if test_data.ndim > 1 else test_data,  # 添\n... (内容已截断) ...\ngs, **kwds)\n     58 try:\n---> 59     return bound(*args, **kwds)\n     60 except TypeError:\n     61     # A TypeError occurs if the object does have such a method in its\n     62     # class, but its signature is not identical to that of NumPy\'s. This\n   (...)\n     66     # Call _wrapit from within the except clause to ensure a potential\n     67     # exception has a traceback chain.\n     68     return _wrapit(obj, method, *args, **kwds)\n\nAxisError: axis 1 is out of bounds for array of dimension 1']
+2025-06-17 21:13:16.807 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: train_data.to_csv('./train_processed.csv', index=False)
+test_data.to_csv('./test_processed.csv', index=False)
+2025-06-17 21:13:16.818 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 21:13:16.818 | INFO     | utils.local_interpreter:execute_code_:141 - 执行代码: train_data.to_csv('./train_processed.csv', index=False)
+test_data.to_csv('./test_processed.csv', index=False)
+2025-06-17 21:13:16.894 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 21:13:16.896 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: []
+2025-06-17 22:52:21.843 | INFO     | utils.local_interpreter:initialize:33 - 初始化本地内核
+2025-06-17 22:52:22.548 | INFO     | utils.local_interpreter:execute_code_:139 - 执行代码: import os
+work_dir = r'./'
+os.makedirs(work_dir, exist_ok=True)
+os.chdir(work_dir)
+print('当前工作目录:', os.getcwd())
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'DejaVu Sans', 'sans-serif']
+plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams['font.family'] = 'sans-serif'
+mpl.rcParams['font.size'] = 12
+mpl.rcParams['axes.labelsize'] = 12
+mpl.rcParams['xtick.labelsize'] = 10
+mpl.rcParams['ytick.labelsize'] = 10
+
+2025-06-17 22:52:22.945 | INFO     | utils.local_interpreter:execute_code:61 - 执行代码: mst_edges, total_weight = mst(
+    edges={
+        ("A", "B"): 2,
+        ("A", "C"): 6,
+        ("B", "D"): 3,
+        ("B", "E"): 7,
+        ("C", "B"): 5,
+        ("C", "D"): 4,
+        ("D", "E"): 1,
+        ("D", "F"): 4,
+        ("E", "F"): 6,
+        ("E", "G"): 7,
+        ("F", "G"): 6
+    },
+    algorithm='kruskal'
+)
+2025-06-17 22:52:22.948 | INFO     | utils.local_interpreter:execute_code:75 - 开始在本地执行代码...
+2025-06-17 22:52:22.948 | INFO     | utils.local_interpreter:execute_code_:139 - 执行代码: mst_edges, total_weight = mst(
+    edges={
+        ("A", "B"): 2,
+        ("A", "C"): 6,
+        ("B", "D"): 3,
+        ("B", "E"): 7,
+        ("C", "B"): 5,
+        ("C", "D"): 4,
+        ("D", "E"): 1,
+        ("D", "F"): 4,
+        ("E", "F"): 6,
+        ("E", "G"): 7,
+        ("F", "G"): 6
+    },
+    algorithm='kruskal'
+)
+2025-06-17 22:52:23.127 | INFO     | utils.local_interpreter:execute_code:78 - 代码执行完成，开始处理结果...
+2025-06-17 22:52:23.127 | ERROR    | utils.local_interpreter:execute_code:122 - 执行错误: ---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+Cell In[2], line 1
+----> 1 mst_edges, total_weight = mst(
+      2     edges={
+      3         ("A", "B"): 2,
+      4         ("A", "C"): 6,
+      5         ("B", "D"): 3,
+      6         ("B", "E"): 7,
+      7         ("C", "B"): 5,
+      8         ("C", "D"): 4,
+      9         ("D", "E"): 1,
+     10         ("D", "F"): 4,
+     11         ("E", "F"): 6,
+     12         ("E", "G"): 7,
+     13         ("F", "G"): 6
+     14     },
+     15     algorithm='kruskal'
+     16 )
+
+NameError: name 'mst' is not defined
+2025-06-17 22:52:23.128 | INFO     | utils.local_interpreter:execute_code:128 - text_to_gpt: ['---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\nCell In[2], line 1\n----> 1 mst_edges, total_weight = mst(\n      2     edges={\n      3         ("A", "B"): 2,\n      4         ("A", "C"): 6,\n      5         ("B", "D"): 3,\n      6         ("B", "E"): 7,\n      7         ("C", "B"): 5,\n      8         ("C", "D"): 4,\n      9         ("D", "E"): 1,\n     10         ("D", "F"): 4,\n     11         ("E", "F"): 6,\n     12         ("E", "G"): 7,\n     13         ("F", "G"): 6\n     14     },\n     15     algorithm=\'kruskal\'\n     16 )\n\nNameError: name \'mst\' is not defined']
+2025-06-17 23:01:11.159 | INFO     | utils.local_interpreter:initialize:32 - 初始化本地内核
+2025-06-17 23:01:11.870 | INFO     | utils.local_interpreter:execute_code_:138 - 执行代码: import os
+work_dir = r'./'
+os.makedirs(work_dir, exist_ok=True)
+os.chdir(work_dir)
+print('当前工作目录:', os.getcwd())
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'DejaVu Sans', 'sans-serif']
+plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams['font.family'] = 'sans-serif'
+mpl.rcParams['font.size'] = 12
+mpl.rcParams['axes.labelsize'] = 12
+mpl.rcParams['xtick.labelsize'] = 10
+mpl.rcParams['ytick.labelsize'] = 10
+
+2025-06-17 23:01:12.381 | INFO     | utils.local_interpreter:execute_code:60 - 执行代码: import networkx as nx
+2025-06-17 23:01:12.384 | INFO     | utils.local_interpreter:execute_code:74 - 开始在本地执行代码...
+2025-06-17 23:01:12.384 | INFO     | utils.local_interpreter:execute_code_:138 - 执行代码: import networkx as nx
+2025-06-17 23:01:12.478 | INFO     | utils.local_interpreter:execute_code:77 - 代码执行完成，开始处理结果...
+2025-06-17 23:01:12.478 | INFO     | utils.local_interpreter:execute_code:127 - text_to_gpt: []
+2025-06-17 23:01:12.479 | INFO     | utils.local_interpreter:execute_code:60 - 执行代码: from tool_code.graph_optimization import mst
+2025-06-17 23:01:12.481 | INFO     | utils.local_interpreter:execute_code:74 - 开始在本地执行代码...
+2025-06-17 23:01:12.482 | INFO     | utils.local_interpreter:execute_code_:138 - 执行代码: from tool_code.graph_optimization import mst
+2025-06-17 23:01:12.488 | INFO     | utils.local_interpreter:execute_code:77 - 代码执行完成，开始处理结果...
+2025-06-17 23:01:12.488 | INFO     | utils.local_interpreter:execute_code:127 - text_to_gpt: []
+2025-06-17 23:01:12.489 | INFO     | utils.local_interpreter:execute_code:60 - 执行代码: mst_edges, total_weight = mst(
+    edges={
+        ("A", "B"): 2,
+        ("A", "C"): 6,
+        ("B", "D"): 3,
+        ("B", "E"): 7,
+        ("C", "B"): 5,
+        ("C", "D"): 4,
+        ("D", "E"): 1,
+        ("D", "F"): 4,
+        ("E", "F"): 6,
+        ("E", "G"): 7,
+        ("F", "G"): 6
+    },
+    algorithm='kruskal'
+)
+2025-06-17 23:01:12.490 | INFO     | utils.local_interpreter:execute_code:74 - 开始在本地执行代码...
+2025-06-17 23:01:12.490 | INFO     | utils.local_interpreter:execute_code_:138 - 执行代码: mst_edges, total_weight = mst(
+    edges={
+        ("A", "B"): 2,
+        ("A", "C"): 6,
+        ("B", "D"): 3,
+        ("B", "E"): 7,
+        ("C", "B"): 5,
+        ("C", "D"): 4,
+        ("D", "E"): 1,
+        ("D", "F"): 4,
+        ("E", "F"): 6,
+        ("E", "G"): 7,
+        ("F", "G"): 6
+    },
+    algorithm='kruskal'
+)
+2025-06-17 23:01:12.497 | INFO     | utils.local_interpreter:execute_code:77 - 代码执行完成，开始处理结果...
+2025-06-17 23:01:12.498 | INFO     | utils.local_interpreter:execute_code:127 - text_to_gpt: []
+2025-06-17 23:12:19.044 | INFO     | utils.local_interpreter:initialize:32 - 初始化本地内核
+2025-06-17 23:12:19.750 | INFO     | utils.local_interpreter:execute_code_:138 - 执行代码: import os
+work_dir = r'./'
+os.makedirs(work_dir, exist_ok=True)
+os.chdir(work_dir)
+print('当前工作目录:', os.getcwd())
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+plt.rcParams['font.sans-serif'] = ['Arial Unicode MS', 'SimHei', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'DejaVu Sans', 'sans-serif']
+plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams['font.family'] = 'sans-serif'
+mpl.rcParams['font.size'] = 12
+mpl.rcParams['axes.labelsize'] = 12
+mpl.rcParams['xtick.labelsize'] = 10
+mpl.rcParams['ytick.labelsize'] = 10
+
+2025-06-17 23:12:20.241 | INFO     | utils.local_interpreter:execute_code:60 - 执行代码: import networkx as nx
+2025-06-17 23:12:20.243 | INFO     | utils.local_interpreter:execute_code:74 - 开始在本地执行代码...
+2025-06-17 23:12:20.244 | INFO     | utils.local_interpreter:execute_code_:138 - 执行代码: import networkx as nx
+2025-06-17 23:12:20.335 | INFO     | utils.local_interpreter:execute_code:77 - 代码执行完成，开始处理结果...
+2025-06-17 23:12:20.336 | INFO     | utils.local_interpreter:execute_code:127 - text_to_gpt: []
+2025-06-17 23:12:20.336 | INFO     | utils.local_interpreter:execute_code:60 - 执行代码: from tool_code.graph_optimization import dijkstra
+2025-06-17 23:12:20.337 | INFO     | utils.local_interpreter:execute_code:74 - 开始在本地执行代码...
+2025-06-17 23:12:20.338 | INFO     | utils.local_interpreter:execute_code_:138 - 执行代码: from tool_code.graph_optimization import dijkstra
+2025-06-17 23:12:20.344 | INFO     | utils.local_interpreter:execute_code:77 - 代码执行完成，开始处理结果...
+2025-06-17 23:12:20.344 | INFO     | utils.local_interpreter:execute_code:127 - text_to_gpt: []
+2025-06-17 23:12:20.345 | INFO     | utils.local_interpreter:execute_code:60 - 执行代码: result = dijkstra(
+    edges={
+        ("v₁", "v₂"): 4,
+        ("v₁", "v₃"): 6,
+        ("v₂", "v₄"): 5,
+        ("v₂", "v₅"): 8,
+        ("v₃", "v₂"): 7,
+        ("v₃", "v₄"): 4,
+        ("v₄", "v₅"): 1,
+        ("v₄", "v₆"): 4,
+        ("v₅", "v₆"): 8,
+        ("v₅", "v₇"): 7,
+        ("v₆", "v₇"): 6,
+        ("v₇", "v₈"): 6
+    },
+    start="v₁",
+    end="v₈",
+    directed=True
+)
+print(f"从v₁到v₈的最短耗时: {result}")
+2025-06-17 23:12:20.346 | INFO     | utils.local_interpreter:execute_code:74 - 开始在本地执行代码...
+2025-06-17 23:12:20.347 | INFO     | utils.local_interpreter:execute_code_:138 - 执行代码: result = dijkstra(
+    edges={
+        ("v₁", "v₂"): 4,
+        ("v₁", "v₃"): 6,
+        ("v₂", "v₄"): 5,
+        ("v₂", "v₅"): 8,
+        ("v₃", "v₂"): 7,
+        ("v₃", "v₄"): 4,
+        ("v₄", "v₅"): 1,
+        ("v₄", "v₆"): 4,
+        ("v₅", "v₆"): 8,
+        ("v₅", "v₇"): 7,
+        ("v₆", "v₇"): 6,
+        ("v₇", "v₈"): 6
+    },
+    start="v₁",
+    end="v₈",
+    directed=True
+)
+print(f"从v₁到v₈的最短耗时: {result}")
+2025-06-17 23:12:20.355 | INFO     | utils.local_interpreter:execute_code:77 - 代码执行完成，开始处理结果...
+2025-06-17 23:12:20.365 | INFO     | utils.local_interpreter:execute_code:127 - text_to_gpt: ['[stdout]\n从v₁到v₈的最短耗时: 23\n']
+2025-06-17 23:12:20.366 | INFO     | utils.local_interpreter:cleanup:215 - 关闭内核

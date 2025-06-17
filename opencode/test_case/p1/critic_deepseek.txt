@@ -1,0 +1,42 @@
+从错误信息来看，主要有两个问题：
+
+1. LightGBM的警告：建议设置`num_leaves`参数来配合`max_depth`使用
+2. 主要的AxisError错误：在调用`drop()`方法时，axis=1对于一维数组无效
+
+问题分析：
+- 第一个警告不是致命错误，只是优化建议
+- 第二个错误是因为在某个地方尝试对一维数组使用axis=1操作，这在pandas/numpy中是不允许的（一维数组只有axis=0）
+
+修改建议：
+1. 添加`num_leaves`参数
+2. 检查`train_data`和`test_data`的结构，确保它们是DataFrame而不是Series
+3. 确保drop操作的对象确实是二维结构
+
+修改后的代码：
+
+```python
+predictions = train_lightgbm_classifier(
+    data=train_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if train_data.ndim > 1 else train_data,  # 添加维度检查
+    target="Transported",
+    new_data=test_data.drop(["PassengerId", "Cabin", "Name"], axis=1) if test_data.ndim > 1 else test_data,  # 添加维度检查
+    test_size=0.2,
+    params={
+        "objective": "binary",
+        "metric": "binary_logloss",
+        "max_depth": 6,
+        "num_leaves": 31,  # 添加num_leaves参数
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+    },
+    num_boost_round=100,
+    with_label=False
+)
+```
+
+如果上述修改后仍然有问题，可能需要检查：
+1. `train_lightgbm_classifier`函数的实现
+2. 确保`train_data`和`test_data`确实是DataFrame对象
+3. 检查是否有列名包含空格（从警告信息看有这个可能）
+
+如果问题仍然存在，可能需要提供`train_lightgbm_classifier`函数的实现代码以便进一步调试。

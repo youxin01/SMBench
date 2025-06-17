@@ -216,13 +216,20 @@ def train_lightgbm_classifier(
     model = lgb.train(params, dtrain, num_boost_round=num_boost_round, valid_sets=[dtrain, dtest])
 
     y_pred = model.predict(X_test, num_iteration=model.best_iteration)
-    predictions = np.argmax(y_pred, axis=1)
+    if len(y_pred.shape) == 1:  # 二分类问题
+        predictions = (y_pred > 0.5).astype(int)
+    else:  # 多分类问题
+        predictions = np.argmax(y_pred, axis=1)
     accuracy = accuracy_score(y_test, predictions)
     print(f"Accuracy: {accuracy}")
 
     # 预测新数据
     probs = model.predict(new_data, num_iteration=model.best_iteration)
-    predictions = np.argmax(probs, axis=1)
+    # 判断是二分类还是多分类
+    if len(probs.shape) == 1:  # 二分类问题
+        predictions = (probs > 0.5).astype(int)
+    else:  # 多分类问题
+        predictions = np.argmax(probs, axis=1)
     
     if with_label:
         new_data1 = new_data.copy()

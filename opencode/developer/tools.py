@@ -24,12 +24,14 @@ def info_pre2(question):
         info1 = show_info(train_data)
         info2 = show_info(test_data)
         info3 = check_categorical_columns(train_data, test_data)
-        info = f"{ques}\n\n #训练集信息\n{info1}\n\n #测试集信息\n{info2}\n\n #以下列应当弃用由于此列当中的特征数目在两数据集当中不一致\n{info3}"
+        info4 = f"文件路径信息：\n训练集路径: '{train_path}'\n测试集路径: '{test_path}'"
+        info = f"{ques}\n\n {info4}\n#训练集信息\n{info1}\n\n #测试集信息\n{info2}\n\n #以下列应当弃用由于此列当中的特征数目在两数据集当中不一致\n{info3}"
     else:
         # 时序类问题
         train_data = train_path = os.path.join(os.path.dirname(question),"train.csv")
         info1 = show_info(train_data)
-        info = f"{ques}\n\n # 训练集信息\n{info1}\n\n"
+        info2 = f"文件路径信息：\n训练集路径: '{train_path}'"
+        info = f"{ques}\n\n {info2} \n#训练集信息\n{info1}\n\n"
     return info
 
 def info_opt2(question):
@@ -45,8 +47,7 @@ def info_eval2(question):
         for i in range(len(csv_file)):
             tmp_data = pd.read_csv(os.path.join(dir_path,csv_file[i]))
             tmp_info = show_info(tmp_data)
-            data_info += f"\n 附件{csv_file[i]}的基本信息"
-            data_info += tmp_info 
+            data_info += f"\n 附件{csv_file[i]}的基本信息，路径为：{os.path.join(dir_path,csv_file[i])}\n"
     # 问题信息
     ques = read_file(question)
 

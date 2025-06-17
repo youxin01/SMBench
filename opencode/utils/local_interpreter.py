@@ -13,7 +13,6 @@ from .response import (
     SystemMessage,
 )
 
-
 class LocalCodeInterpreter(BaseCodeInterpreter):
     def __init__(
         self,
@@ -127,8 +126,6 @@ class LocalCodeInterpreter(BaseCodeInterpreter):
 
         logger.info(f"text_to_gpt: {text_to_gpt}")
         combined_text = "\n".join(text_to_gpt)
-
-        # await self._push_to_websocket(content_to_display)
 
         return (
             combined_text,
