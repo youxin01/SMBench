@@ -1,39 +1,46 @@
-# AMML:AnAdaptive Framework for Mathematical Modeling with LLMs
-This repository provides the offical code for the paper "AMML: An Adaptive Framework for Mathematical Modeling with LLMs".
+# AMML: An Adaptive Framework for Mathematical Modeling with LLMs
 
-![](./assets/pipeline.png)
+This repository provides the official implementation of the paper **"AMML: An Adaptive Framework for Mathematical Modeling with LLMs"**.
 
-## 🚀 Qucik Start
+<p align="center">
+  <img src="./assets/pipeline.png" alt="Pipeline" width="700">
+</p>
 
-First, install all the required packages by running:
+
+## 🚀 Quick Start
+
+### Install
+
+Run the following command to install all required packages:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### API Config
+### API Configuration
 
-You should fill your llm's name and api key in `utils/api.py` file. For example,
+Specify your LLM provider and API key in the `utils/api.py` file. For example:
 
 ```python
 "doubao": {
     "base_url": "https://ark.cn-beijing.volces.com/api/v3",
     "api_key": "YOUR_API_KEY",
-    "model": "doubao-1-5-pro-32k-250115"}
+    "model": "doubao-1-5-pro-32k-250115"
+}
 ```
 
-I already provide deepseek，qwen32，qwen72，kimi，doubao's url and model name.
+> Pre-configured providers include: `deepseek`, `qwen32`, `qwen72`, `kimi`, and `doubao`.
+
 
 ### Run
 
-You can run as following:
+To run the full AMML pipeline, use the following command:
 
 ```bash
 python ./pipeline.py --question ./test_case/o7/question.txt --type opt --agent deepseek --max_retries 3 --cover
 ```
-
->- `--question`: the path of the question file.
->- `--type`:type of the question, including opt(optimization),prediction(pre),evaluate(eval),basic
->- `--agent`:base llm, including`deepseek，qwen32，qwen72，kimi，doubao` etc.
->- `--max_retries`:Max retry times for code correction.
->- `--cover`:whether force overwrite of intermediate steps.
+>- `--question`: Path to the question file.
+>- `--type`: Task type. Options: `opt` (optimization), `pre` (prediction), `eval` (evaluation), `basic`.
+>- `--agent`: LLM provider. Options include `deepseek`, `qwen32`, `qwen72`, `kimi`, `doubao`, etc.
+>- `--max_retries`: Maximum number of code correction retries.
+>- `--cover`: Whether to overwrite intermediate results (set this flag to force re-run).
