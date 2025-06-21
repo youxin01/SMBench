@@ -1,7 +1,7 @@
 # AMML:AnAdaptive Framework for Mathematical Modeling with LLMs
 This repository provides the offical code for the paper "AMML: An Adaptive Framework for Mathematical Modeling with LLMs".
 
-<img src="C:\Users\NumberOne\AppData\Roaming\Typora\typora-user-images\image-20250621195720873.png" alt="image-20250621195720873" style="zoom: 50%;" />
+![](./assets/pipeline.png)
 
 ## 🚀 Qucik Start
 
