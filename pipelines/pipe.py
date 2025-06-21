@@ -29,9 +29,10 @@ def run_planner(question_path: str, agent: str, cover: bool, problem_type: str) 
 
 def run_rag(question_path: str, plan_path: str) -> list:
     db_path = os.path.join(os.path.dirname(question_path), "tool_db")
+    exist= os.path.exists(db_path)
     chroma_db = ChoromaDBManager(db_path)
 
-    if not os.path.exists(db_path):
+    if not exist:
         logger.info("tool_db does not exist. Initializing and storing tools...")
         chroma_db.store_tools_to_db(dir_path="./tool_doc_md")
     else:
@@ -62,8 +63,8 @@ def code_header(funcs, code_interpreter):
             module_name = f"tool_code.{func['source_file'].replace('.md', '')}"
             module = importlib.import_module(module_name)
             code_interpreter.execute_code(module.get_header())
-            code_interpreter.execute_code(f"from {module_name} import {func['tool_name']}")
-            loaded_files.add(func["source_file"])
+        code_interpreter.execute_code(f"from {module_name} import {func['tool_name']}")
+        loaded_files.add(func["source_file"])
 
 
 def correct_code(file_path, code, error_message, agent):
@@ -98,13 +99,14 @@ def run_executor(question_path: str, agent: str, dev_code_path: str, func_list: 
         text, error, msg = code_interpreter.execute_code(exec_code[-1])
         if error:
             logger.warning(f"Code error on attempt {retry_count + 1}, retrying...")
+            file2 = os.path.join(os.path.dirname(question_path), f"critic_{agent}_{retry_count + 1}.txt")
             corrected = correct_code(
-                file_path=os.path.join(os.path.dirname(question_path), f"critic_{agent}_{retry_count + 1}.txt"),
+                file_path=file2,
                 code=exec_code,
                 error_message=msg,
                 agent=agent
             )
-            exec_code = extract_code(corrected)
+            exec_code = extract_code(file2)
             if not exec_code:
                 raise ValueError("Correction failed: extract_code returned empty result.")
             retry_count += 1
