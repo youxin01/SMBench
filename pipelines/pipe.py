@@ -85,7 +85,8 @@ def correct_code(file_path, code, error_message, agent):
 
 def run_executor(question_path: str, agent: str, dev_code_path: str, func_list: list, max_retries: int):
     logger.info("Running code executor...")
-    notebook = NotebookSerializer("./")
+    
+    notebook = NotebookSerializer(os.path.dirname(question_path))
     code_interpreter = LocalCodeInterpreter(work_dir="./", notebook_serializer=notebook, task_id="111")
     code_interpreter.initialize()
     code_header(func_list, code_interpreter)
