@@ -28,7 +28,8 @@ def info_pre2(question):
         info = f"{ques}\n\n {info4}\n#训练集信息\n{info1}\n\n #测试集信息\n{info2}\n\n #以下列应当弃用由于此列当中的特征数目在两数据集当中不一致\n{info3}"
     else:
         # 时序类问题
-        train_data = train_path = os.path.join(os.path.dirname(question),"train.csv")
+        train_path = os.path.join(os.path.dirname(question),"train.csv")
+        train_data = pd.read_csv(train_path)
         info1 = show_info(train_data)
         info2 = f"文件路径信息：\n训练集路径: '{train_path}'"
         info = f"{ques}\n\n {info2} \n#训练集信息\n{info1}\n\n"
@@ -44,10 +45,12 @@ def info_eval2(question):
     data_info=""
     csv_file = [p for p in os.listdir(dir_path) if p.endswith(".csv")]
     if len(csv_file)>0:
-        for i in range(len(csv_file)):
-            tmp_data = pd.read_csv(os.path.join(dir_path,csv_file[i]))
+        for i in csv_file:
+            tmp_path = os.path.join(dir_path,i)
+            tmp_data = pd.read_csv(tmp_path)
             tmp_info = show_info(tmp_data)
-            data_info += f"\n 附件{csv_file[i]}的基本信息，路径为：{os.path.join(dir_path,csv_file[i])}\n"
+            data_info += f"\n 【附件 {i} 的基本信息】 \n 路径为：{tmp_path}\n 介绍：{tmp_info}\n"
+
     # 问题信息
     ques = read_file(question)
 

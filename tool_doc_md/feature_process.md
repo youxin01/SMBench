@@ -77,7 +77,7 @@
   - **Description:** 之前保存的编码器路径（由 `label_encode` 生成的 pickle 文件）。
 
 **Result:**
-- 返回 `pd.DataFrame`，包含一个名为 `target_col` 的列，存放解码后的原始标签。
+- 返回处理后的`pd.DataFrame`。
 
 **Notes:**
 - 若输入为 `DataFrame`，必须包含 `target_col`。
@@ -85,8 +85,8 @@
 - 编码器必须已通过 `label_encode` 保存，并在目标列名下可用。
 -----
 
-#### map_func_col
-**Name:** map_func_col  
+#### map_func
+**Name:** map_func
 **Description:** 基于字典映射的列数据转换函数，
 **Applicable Situations:**  
 - 需要对DataFrame中指定列进行批量数据转换  
@@ -118,173 +118,145 @@ processed_df = map_func(
 ```
 -----
 
-#### two_data_func_col
-**Name:** two_data_func_col  
-**Description:** 基于双数据集跨表特征生成函数，通过分组聚合和表达式计算生成复合特征  
+#### two_data_func  
+**Name:** two_data_func  
+**Description:**  
+基于两个表的列操作函数，支持通过指定列进行聚合计算，并结合数学表达式生成新特征。适用于特征工程中跨表、按列聚合的场景。支持分组（groupby）与非分组操作。
+
 **Applicable Situations:**  
-- 需要结合两个数据集的聚合结果进行特征工程  
-- 支持外连接合并后填充缺失值，避免数据丢失  
-- 需通过数学表达式（如x/y）组合聚合值的场景  
+- 需对两个不同数据表中的列进行聚合后组合生成新特征  
+- 使用表达式（如 `x - y`、`x / (y + 1)`）从列的聚合值中计算复合特征  
+- 需要保留所有分组（使用外连接）并对缺失值自动填充为0，避免信息丢失  
 
 **Parameters:**  
-- `data1`/`data2`:  
+- `data1` / `data2`:  
   - ​**Type:** `pd.DataFrame`  
-  - ​**Description:** 参与计算的两个原始数据表,两个数据集都是，行为样本，列为特征。
+  - ​**Description:** 参与计算的两个源数据表，每行代表一个样本，列为特征  
 
 - `feature`:  
   - ​**Type:** `str`  
-  - ​**Description:** 最终生成的特征列名称  
+  - ​**Description:** 最终生成的新特征名称（列名）  
 
 - `col`:  
-  - ​**Type:** `list`  
-  - ​**Description:** 两个原始数据表当中参加计算的列名，格式为[data1列名, data2列名]  
+  - ​**Type:** `list[str]`  
+  - ​**Description:** 两张表中参与聚合计算的列名，格式为 `[data1列名, data2列名]`，即**针对特定列的操作**  
 
 - `func1`:  
-  - ​**Type:** `list`  
-  - ​**Description:** 第一步操作的聚合函数列表，格式为[data1聚合方法, data2聚合方法]，支持sum/mean/count/max/min或自定义函数  ，例如["sum","sum"]。
+  - ​**Type:** `list[Union[str, Callable]]`  
+  - ​**Description:** 两个数据集对应列的聚合函数，格式为 `[data1聚合函数, data2聚合函数]`，支持字符串函数（如 "mean"）或自定义函数  
 
 - `func2`:  
   - ​**Type:** `str`  
-  - ​**Description:** 第二部特征计算表达式，使用x代表data1聚合结果，y代表data2聚合结果（如"x/y"）  
+  - ​**Description:** 表达式字符串，用 `x` 表示第一个数据集的聚合结果，用 `y` 表示第二个数据集的聚合结果。例如 `"x / (y + 1)"`  
 
 - `group_by`:  
-  - ​**Type:** `list`  
-  - ​**Description:** 分组字段列表（如["客户ID"]），若为 None 则对整体数据聚合。
+  - ​**Type:** `list[str]` | `None`  
+  - ​**Description:** 可选，若提供则按指定列进行分组聚合，否则对整表进行全局聚合  
 
 **Result:**  
-- 返回包含分组字段和新建特征列的DataFrame，缺失值自动填充0  
+- 返回一个 `pd.DataFrame`，包含分组字段（如有）和生成的新特征列。空值会自动填充为0，确保数据完整性。
 
 **Example Call:**  
-对每位客户，计算其平均收入与总支出的比值作为财务活跃度特征：
+基于“订单表”和“退款表”，计算每个客户的订单均价与退款总金额的差值：
 
 ```python
-active_df = two_data_func(
-    data1=df_income,
-    data2=df_expense,
-    feature="财务活跃度",
-    col=["收入", "支出"],
+df_feature = two_data_func(
+    data1=df_orders,
+    data2=df_refunds,
+    feature="净消费值",
+    col=["订单金额", "退款金额"],
     func1=["mean", "sum"],
-    func2="x / (y + 1)",
+    func2="x - y",
     group_by=["客户ID"]
 )
 ```
 -----
 
-#### generate_single_feature_col
+#### generate_single_feature  
 **Name:** generate_single_feature  
-**Description:** 单数据集特征生成函数，支持多聚合方式组合及后处理计算  
+**Description:**  
+基于单个数据表和配置字典，生成一个新特征。支持灵活的列级聚合操作，可选的分组处理，以及自定义后处理函数。适用于数据预处理或特征工程中对单列或多列特征进行组合聚合的场景。
+
 **Applicable Situations:**  
-- 需要从单数据集生成复杂聚合特征  
-- 需组合多个中间聚合结果进行二次计算  
-- 支持分组/全量两种计算模式  
+- 需要按某一列或某几列聚合构造新特征  
+- 支持对同一列使用多个聚合函数进行计算（如 `mean` 和 `std`）  
+- 支持自定义 `post_process` 函数对多个聚合结果进行组合或逻辑处理  
+- 可选分组键 `group_key` 支持分用户、分商品等粒度计算  
 
 **Parameters:**  
 - `data`:  
   - ​**Type:** `pd.DataFrame`  
-  - ​**Description:** 原始数据表，行为样本，列为特征
+  - ​**Description:** 原始数据表，每行为一个样本，列为特征字段  
 
 - `feature`:  
   - ​**Type:** `str`  
-  - ​**Description:** 最终生成的特征列名称  
+  - ​**Description:** 最终生成的新特征名称  
 
 - `feature_config`:  
   - ​**Type:** `dict`  
-  - ​**Description:** 特征配置字典，必须包含：  
-    - `agg_funcs`: 聚合函数列表，元素可为函数名字符串或(列名,函数)元组  
-    - `post_process`: 可选，接受中间结果DataFrame并返回最终Series的后处理函数  
+  - ​**Description:** 特征配置字典，支持以下字段：  
+    - `agg_funcs`: 必填，聚合函数列表，可为字符串函数名、函数对象，或 (列名, 函数) 元组  
+    - `column`: 可选，默认使用数据表第一列，指定需要聚合的列名  
+    - `post_process`: 可选，对聚合结果 `df` 进行后处理的函数，返回单列或多列  
 
 - `group_key`:  
-  - ​**Type:** `str`  
-  - ​**Description:** 分组列名，为空时进行全量计算  
+  - ​**Type:** `str` | `None`  
+  - ​**Description:** 分组字段，如 "客户ID"，若为 `None` 则对全体数据聚合  
 
 **Result:**  
-- 返回包含分组字段（如有）和新建特征列的DataFrame，索引自动重置  
+- 返回一个 `pd.DataFrame`，包含分组字段（如有）和最终生成的新特征列。自动处理索引对齐。
 
 **Example Call:**  
+计算每个客户的订单均值与标准差之和作为波动感知特征：
+
 ```python
-feature_df = generate_single_feature_col(
-    data=df_log,
-    feature="登录频次",
-    feature_config={
-        "agg_funcs": [("登录时间", "count"), ("设备类型", lambda x: x.nunique())],
-        "post_process": lambda df: df.iloc[:,0] / df.iloc[:,1]
-    },
-    group_key="用户ID"
+feature_config = {
+    "agg_funcs": ["mean", "std"],
+    "column": "订单金额",
+    "post_process": lambda df: df.sum(axis=1)
+}
+
+result_df = generate_single_feature(
+    data=df_orders,
+    feature="波动感知",
+    feature_config=feature_config,
+    group_key="客户ID"
 )
 ```
 -----
+#### merge_features  
+**Name:** merge_features  
+**Description:**  
+将多个包含相同主键的特征表合并为一个统一的特征表。支持自定义合并方式（如 outer/inner），并自动处理列名冲突。适用于特征工程中多个模块生成的特征表整合。
 
-#### apply_feature_row
-**Name:** apply_feature_row  
-**Description:** 借用apply函数的行特征生成函数，对每一行进行操作获得特征 
 **Applicable Situations:**  
-- 需要对选定数值列进行列方向统计量计算  
-- 需生成与索引列强关联的复合特征（如变异系数）  
-- 本函数针对的是需要对行进行操作得到特征的数据集
+- 多个子模块或处理步骤分别生成特征表，需要统一合并  
+- 合并时可能存在列名重复，需要自动冲突处理  
+- 保留所有主键样本（通过 outer join）或仅保留交集样本（通过 inner join）  
 
 **Parameters:**  
-- `data`:  
-  - ​**Type:** `pd.DataFrame`  
-  - ​**Description:** 原始输入数据，需包含配置中索引列和可计算的数值列  
+- `features`:  
+  - ​**Type:** `list[pd.DataFrame]`  
+  - ​**Description:** 待合并的特征表列表，每个表都应包含主键字段  
 
-- `feature`:  
+- `on`:  
+  - ​**Type:** `list[str]` | `str`  
+  - ​**Description:** 合并依据的主键列名，支持单列或多列  
+
+- `how`:  
   - ​**Type:** `str`  
-  - ​**Description:** 生成的特征列名称  
-
-- `feature_config`:  
-  - ​**Type:** `dict`  
-  - ​**Description:** 特征配置字典，包括：  
-    - `without_column`：需保留但排除计算的索引列列表  
-    - `apply_funcs`：函数列表，每个元素为（函数对象, axis参数）元组  
+  - ​**Description:** 合并方式，默认为 `'outer'`，可选 `'inner'`, `'left'`, `'right'` 等  
 
 **Result:**  
-- 返回包含原始索引列和新特征列的DataFrame 
+- 返回合并后的 `pd.DataFrame`，包含所有特征列和主键列。若存在列名冲突，将自动去除重复列（后缀为 `_dup`）。
 
 **Example Call:**  
+合并三个子特征表 `feat1`、`feat2`、`feat3`，保留所有客户样本：
+
 ```python
-Supply_Stability = apply_feature_row(
-    data=supply,
-    feature="变异系数",
-    feature_config={
-        'without_column': ['供应商ID','材料分类'],
-        'apply_funcs': [
-            (lambda x: x.std() / x.mean() if x.mean() > 0 else 0, 'axis=1')
-        ]
-    }
-)
-```
------
-
-#### Order_Fulfillment_cal
-**Name:** Order_Fulfillment_cal  
-**Description:** 双数据集订单满足率动态计算函数，通过逐行对比订单与供应数据生成评估指标  
-**Applicable Situations:**  
-- 需要对比供应商实际供应量与订单量的匹配程度  
-- 需排除标识列后对数值列进行行级动态计算  
-- 存在零值订单需要特殊处理的业务场景  
-
-**Parameters:**  
-- `order1`/`supply2`:  
-  - ​**Type:** `pd.DataFrame`  
-  - ​**Description:** 订单数据表与供应数据表，必须包含相同的索引列（without_col）  
-
-- `without_col`:  
-  - ​**Type:** `list`  
-  - ​**Description:** 标识列列表（如供应商ID等），计算时会被保留但排除在数值计算外  
-
-- `feature`:  
-  - ​**Type:** `str`  
-  - ​**Description:** 生成的特征列名称（如"订单满足率"）  
-
-**Result:**  
-- 返回包含标识列和新建特征列的DataFrame，满足率取值范围[0,1]的小数值  
-
-**Example Call:**  
-```python
-Order_Fulfillment = Order_Fulfillment_cal(
-    order=order_data,
-    supply=supply_data,
-    without_col=['供应商ID', '材料分类'],
-    feature="订单满足率"
+merged_df = merge_features(
+    features=[feat1, feat2, feat3],
+    on="客户ID",
+    how="outer"
 )
 ```

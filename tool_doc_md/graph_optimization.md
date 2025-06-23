@@ -142,8 +142,8 @@ colors, num_colors = greedy_coloring(
 
 **Result:**  
 - 返回一个元组 `(flow_value, flow_dict)`  
-  - `flow_value`: 网络的最大流量  
-  - `flow_dict`: 每条边上流量的分配情况  
+  - `flow_value`: 源点到汇点的最大可行流（即最大任务完成数量或招聘总数）  
+  - `flow_dict`: 记录每条边实际流量的嵌套字典，结构为 `{"节点A": {"节点B": 流量}}` 
 
 **Example Call:**  
 ```python

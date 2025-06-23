@@ -73,7 +73,7 @@ def train_xgboost_regressor(
     model = xgb.train(params, dtrain, num_boost_round=num_boost_round)
 
     y_pred = model.predict(dtest)
-    rmse = mean_squared_error(y_test, y_pred, squared=False)
+    rmse = mean_squared_error(y_test, y_pred)
     print(f"RMSE: {rmse}")
 
     # 预测新数据
@@ -174,7 +174,7 @@ def train_lightgbm_regressor(
     model = lgb.train(params, dtrain, num_boost_round=num_boost_round, valid_sets=[dtrain, dtest])
 
     y_pred = model.predict(X_test, num_iteration=model.best_iteration)
-    rmse = mean_squared_error(y_test, y_pred, squared=False)
+    rmse = mean_squared_error(y_test, y_pred)
     print(f"RMSE: {rmse}")
 
     # 预测新数据

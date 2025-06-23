@@ -5,11 +5,12 @@ from chromadb.config import Settings
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
 import os
 import re
+from utils.log_util import logger
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 class ChoromaDBManager:
     """管理ChromaDB的连接和工具存储"""
-    def __init__(self, db_path: str = "./tool_db", collection_name: str = "tools"):
+    def __init__(self, db_path: str = "./tool_db", collection_name: str = "tools1"):
         self.db_path = db_path
         self.collection_name = collection_name
         self.collection = self.init_chroma_db(db_path, collection_name)
@@ -46,9 +47,9 @@ class ChoromaDBManager:
                 continue
                 
             filepath = os.path.join(dir_path, filename)
+            print(f"正在处理文件: {filename}")
             with open(filepath, 'r', encoding='utf-8') as f:
                 tools = self.parse_tool_blocks(f.read())
-                
                 self.collection.add(
                     documents=[t["content"] for t in tools],
                     metadatas=[{

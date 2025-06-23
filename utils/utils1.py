@@ -125,19 +125,29 @@ def write_file(file_path: str, content):
     
     Args:
         file_path: Path to the file to be written
-        content: Content to write (string for txt/md, list of strings for csv)
+        content: Content to write (string, list[str], or dict/list[dict])
     """
-    if file_path.endswith('txt'):
+    ext = file_path.lower()
+
+    if ext.endswith('.txt') or ext.endswith('.md'):
         with open(file_path, 'w', encoding='utf-8') as f:
-            f.write(content if isinstance(content, str) else '\n'.join(content))
-    elif file_path.endswith('csv'):
+            if isinstance(content, str):
+                f.write(content)
+            elif isinstance(content, list) and all(isinstance(x, str) for x in content):
+                f.write('\n'.join(content))
+            else:
+                f.write(json.dumps(content, ensure_ascii=False, indent=2))
+    elif ext.endswith('.csv'):
         with open(file_path, 'w', encoding='utf-8', newline='') as f:
-            if isinstance(content, list):
+            if isinstance(content, list) and all(isinstance(x, str) for x in content):
                 f.writelines(content)
             else:
-                f.write(content)
-    elif file_path.endswith('md'):
+                f.write(str(content))
+    elif ext.endswith('.json'):
         with open(file_path, 'w', encoding='utf-8') as f:
-            f.write(content if isinstance(content, str) else '\n'.join(content))
+            if isinstance(content, str):
+                f.write(content)
+            else:
+                f.write(json.dumps(content, ensure_ascii=False, indent=2))
     else:
         raise ValueError("Unsupported file format")

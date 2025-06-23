@@ -93,7 +93,7 @@ def solve_ilp(c, A_ub=None, b_ub=None, A_eq=None, b_eq=None, bounds=None):
     
     # 设置问题并求解
     prob = cp.Problem(objective, constraints)
-    prob.solve(solver=cp.CBC)
+    prob.solve()
     
     if prob.status in ["optimal", "optimal_inaccurate"]:
         return x.value, prob.value
@@ -222,7 +222,7 @@ def solve_zop(c, A=None, b=None):
         b = np.array(b)
         constraints.append(A @ x <= b)
     prob = cp.Problem(cp.Minimize(c.T @ x), constraints)
-    prob.solve(solver=cp.CBC)
+    prob.solve()
     if prob.status in ["optimal", "optimal_inaccurate"]:
         return x.value, prob.value
     else:

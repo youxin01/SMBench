@@ -100,13 +100,13 @@ def two_data_func(
     col: list,
     func1: list,
     func2: str,
-    group_by: list
+    group_by: list = None
 ) -> pd.DataFrame:
     # 参数校验
     if len(col) != 2 or len(func1) != 2:
-        raise ValueError("参数格式错误: col和func1需2个元素，group_by需1个元素")
+        raise ValueError("参数格式错误: col 和 func1 应包含两个元素")
 
-    # 定义聚合函数字典
+    # 内置聚合函数映射
     func_map = {
         'sum': 'sum',
         'mean': 'mean',
@@ -115,28 +115,33 @@ def two_data_func(
         'min': 'min'
     }
 
-    # 处理聚合函数
-    agg_funcs = []
-    for f in func1:
-        if isinstance(f, str):
-            agg_funcs.append(func_map[f.lower()])
-        else:
-            agg_funcs.append(f)
+    def resolve_func(f):
+        return func_map.get(f.lower(), f) if isinstance(f, str) else f
 
-    # 执行分组聚合
-    agg1 = data1.groupby(group_by)[col[0]].agg(agg_funcs[0]).rename('x')
-    agg2 = data2.groupby(group_by)[col[1]].agg(agg_funcs[1]).rename('y')
+    # 是否分组
+    if group_by:
+        agg1 = data1.groupby(group_by)[col[0]].agg(resolve_func(func1[0])).rename('x')
+        agg2 = data2.groupby(group_by)[col[1]].agg(resolve_func(func1[1])).rename('y')
+    else:
+        x = getattr(data1[col[0]], resolve_func(func1[0]))() if isinstance(resolve_func(func1[0]), str) \
+            else resolve_func(func1[0])(data1[col[0]])
+        y = getattr(data2[col[1]], resolve_func(func1[1]))() if isinstance(resolve_func(func1[1]), str) \
+            else resolve_func(func1[1])(data2[col[1]])
+        try:
+            result = pd.DataFrame({feature: [eval(func2.replace("x", "x").replace("y", "y"))]})
+        except Exception as e:
+            raise ValueError(f"表达式解析失败: {func2}，错误信息: {e}")
+        return result
 
-    # 合并结果（外连接填充0）
+    # 合并后表达式计算
     merged = pd.merge(agg1, agg2, left_index=True, right_index=True, how='outer').fillna(0)
 
-    # 表达式计算
     try:
-        merged[feature] = merged.eval(func2.replace("x", "x").replace("y", "y"))
-    except:
-        raise ValueError(f"表达式解析失败: {func2}")
+        merged[feature] = merged.eval(func2)
+    except Exception as e:
+        raise ValueError(f"表达式解析失败: {func2}，错误信息: {e}")
 
-    return merged[feature].reset_index()
+    return merged[[feature]].reset_index()
 
 # 根据一列进行特征计算
 def generate_single_feature(

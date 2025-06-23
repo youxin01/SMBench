@@ -32,7 +32,14 @@
 - `"fdr"`: FDR校正（需要`pvals`参数）  
 
 **Result:**  
-- 返回一个字典，包含检验统计量、p值及相关统计信息，具体内容取决于检验方法  
+- 返回一个 `dict` 类型的结构化结果，字段随方法而不同，常见字段包括：  
+  - `test`: 检验方法名称（字符串）  
+  - `t_stat`, `F_stat`, `U_stat`, `H_stat`, `statistic`: 对应的检验统计量  
+  - `p_value`: 显著性 p 值  
+  - `mean`, `median`, `mean_diff`, `median_diff`: 描述性统计  
+  - `n1`, `n2`, `n_pairs`, `n_groups`: 样本数量  
+  - `group_stats`: 每组样本的均值/方差/中位数（字典）  
+  - `adjusted_pvals`, `reject`: 多重比较校正后的结果 
 
 **Example Call:**  
 ```python
@@ -81,6 +88,8 @@ result = hypothesis_test(
 
 **Result:**  
 - 返回一个字典，包含检验统计量和p值  
+  - `statistic`: 检验统计量
+  - `p_value`: 显著性 p 值
 
 **Example Call:**  
 ```python

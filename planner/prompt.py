@@ -19,11 +19,11 @@ basic_planer ="""
 ### data_clean
 数据清洗，包括填充缺失值、异常值处理、去除重复值。
 ### feature_process
-特征处理，包括独热编码、标签编码、标签解码、列映射（map_func_col），跨表生成特征函数（two_data_func_col），
-单数据集特征生成（ generate_single_feature ），行特征生成（apply_feature_row），双数据集订单满足率计算（ Order_Fulfillment_cal）。
+特征处理，包括独热编码、标签编码、标签解码、列映射(map_func)、跨表生成列特征函数(two_data_func)、
+单数据集列特征生成(generate_single_feature)、多数据集合并(merge_features)。
 ### machine_learning
-- 回归模型：XGBoost,LightGBM,线性,多项式,指数,幂律，RANSAC鲁棒回归。
-- 分类模型：XGBoost,LightGBM,逻辑回归，SVM，KNN，决策树。
+- 回归模型：XGBoost,LightGBM,简单线性回归,多项式回归,指数回归,幂律回归，RANSAC鲁棒回归。
+- 分类模型：XGBoost,LightGBM,逻辑回归，支撑向量机(SVM)，K最近邻分类(KNN)。
 - 时序模型：ARIMA,LSTM。
 ### evaluate_model
 - 数学建模综合评价类问题的函数，并不是评估模型性能的函数。
@@ -72,11 +72,11 @@ pre_planer ="""
 ### data_clean
 数据清洗，包括填充缺失值、异常值处理、去除重复值。
 ### feature_process
-特征处理，包括独热编码、标签编码、标签解码、列映射（map_func_col），跨表生成特征函数（two_data_func_col），
-单数据集特征生成（ generate_single_feature ），行特征生成（apply_feature_row），双数据集订单满足率计算（ Order_Fulfillment_cal）。
+特征处理，包括独热编码、标签编码、标签解码、列映射(map_func)、跨表生成列特征函数(two_data_func)、
+单数据集列特征生成(generate_single_feature)、多数据集合并(merge_features)。
 ### machine_learning
-- 回归模型：XGBoost,LightGBM,线性,多项式,指数,幂律，RANSAC鲁棒回归。
-- 分类模型：XGBoost,LightGBM,逻辑回归，SVM，KNN，决策树。
+- 回归模型：XGBoost,LightGBM,简单线性回归,多项式回归,指数回归,幂律回归，RANSAC鲁棒回归。
+- 分类模型：XGBoost,LightGBM,逻辑回归，支撑向量机(SVM)，K最近邻分类(KNN)。
 - 时序模型：ARIMA,LSTM。
 ### evaluate_model
 - 数学建模综合评价类问题的函数，并不是评估模型性能的函数。

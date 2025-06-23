@@ -114,35 +114,21 @@ def topsis_analysis(data: pd.DataFrame,
                     types: dict, 
                     params: dict, 
                     weights: dict) -> np.ndarray:
-    """
-    TOPSIS 分析函数，支持 4 种指标类型：
-      0: 极小型指标（值越小越好）
-      1: 极大型指标（值越大越好）
-      2: 中间型指标（距离给定最佳值越近越好）
-      3: 区间型指标（在给定区间内为最优，超出后按偏离程度评价）
-      
-    参数:
-      data: 原始数据 DataFrame，每行代表一个样本，每列代表一个指标，列名称应与 types, params, weights 的 keys 匹配
-      types: 指标类型字典，例如 {"变异系数": 0, "平均供货量": 1, "订单完成率": 1, "订单满足率": 1}
-      params: 每个指标的参数字典。对于中间型指标，值为最佳值；对于区间型指标，值为 [下限, 上限]；其他可为 None
-              例如 {"变异系数": None, "平均供货量": None, "订单完成率": None, "订单满足率": None}
-      weights: 权重字典，例如 {"变异系数": 0.25, "平均供货量": 0.25, "订单完成率": 0.25, "订单满足率": 0.25}
-      
-    返回:
-      归一化后的 TOPSIS 得分数组，每个样本一个得分（值越高越好）
-    """
+    
     # 确定参与计算的指标，使用 weights 的 keys 作为计算指标
     features = list(weights.keys())
     
     # 检查所有指标是否都存在于 DataFrame 及对应字典中
     for col in features:
+        if data[col].isnull().any():
+            raise ValueError(f"输入数据列 '{col}' 中含有 NaN 值，处理或者不使用此特征")
         if col not in data.columns:
             raise ValueError(f"原始数据中缺少指标: {col}")
         if col not in types:
             raise ValueError(f"缺少指标 {col} 的类型定义")
         if col not in params:
             params[col] = None  # 没有参数则设为 None
-    
+
     # 提取参与计算的矩阵，转换为 float 类型
     matrix = data[features].astype(float).to_numpy()
     n_samples, n_features = matrix.shape
@@ -215,6 +201,7 @@ def topsis_analysis(data: pd.DataFrame,
     scores = distance_negative / (distance_positive + distance_negative)
     # 归一化得分（可选：使所有得分之和为1）
     normalized_score = scores / np.sum(scores)
+    data = data.copy()
     data["TOPSIS得分"]=normalized_score
 
     return data[[index_col, "TOPSIS得分"]]

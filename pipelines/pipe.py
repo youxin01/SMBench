@@ -44,16 +44,18 @@ def run_rag(question_path: str, plan_path: str) -> list:
 
 def run_developer(question_path: str, agent: str, cover: bool, problem_type: str, func_list: list) -> str:
     dev_path = os.path.join(os.path.dirname(question_path), f"dev_{agent}.txt")
+    developer_prompt = get_developer(problem_type=problem_type, func=func_list)
+    user_input = get_dev_user(question=question_path, problem_type=problem_type)
     if not cover and os.path.exists(dev_path):
         logger.info(f"{dev_path} already exists, skipping developer step.")
-        return dev_path
+        return dev_path,developer_prompt,user_input
 
     logger.info("Running developer...")
     developer_prompt = get_developer(problem_type=problem_type, func=func_list)
     user_input = get_dev_user(question=question_path, problem_type=problem_type)
     response = gpt_chat(sys=developer_prompt, user=user_input, provider=agent)
     write_file(dev_path, response)
-    return dev_path
+    return dev_path,developer_prompt,user_input
 
 
 def code_header(funcs, code_interpreter):
@@ -67,30 +69,37 @@ def code_header(funcs, code_interpreter):
         loaded_files.add(func["source_file"])
 
 
-def correct_code(file_path, code, error_message, agent):
+def correct_code(file_path, code, error_message, agent,messages):
     critic_prompt = """
-    下面是我的代码和我的报错信息：
+    下面是我运行的代码和我的报错信息：
     <code>{}</code>
     报错信息：
     <error>{}</error>
     请你帮我分析代码错误原因，并且给出修改后的代码，要求：
-    1. 在原本代码上进行修改，尽可能不增添新的代码。
+    1. 只需要在原本代码上进行修改，尽可能不增添新的代码。
     2. 返回的代码用```python开头和```结尾。
     """
     user = critic_prompt.format(code, error_message)
-    response = gpt_chat(sys="You are a helpful assistant.", user=user, provider=agent)
+    messages.append({"role": "user", "content": user})
+    response = gpt_chat(messages=messages, provider=agent)
+    messages.append({"role": "assistant", "content": response})
     write_file(file_path, response)
-    return response
+    return response,messages
 
 
-def run_executor(question_path: str, agent: str, dev_code_path: str, func_list: list, max_retries: int):
+def run_executor(question_path: str, agent: str, dev_code_path: str, func_list: list, max_retries: int,dev_sys: str = None, dev_user: str = None):
     logger.info("Running code executor...")
-    
-    notebook = NotebookSerializer(os.path.dirname(question_path))
+    notebook = NotebookSerializer(work_dir=os.path.dirname(question_path),notebook_name=f"notebook_{agent}.ipynb")
     code_interpreter = LocalCodeInterpreter(work_dir="./", notebook_serializer=notebook, task_id="111")
     code_interpreter.initialize()
     code_header(func_list, code_interpreter)
+    message=[]
 
+    message.append({"role": "system", "content": dev_sys})
+    message.append({"role": "user", "content": dev_user})
+    with open(dev_code_path, "r") as f:
+        md_str = f.read()
+    message.append({"role": "assistant", "content": md_str})
     exec_code = extract_code(dev_code_path)
     if not exec_code:
         raise ValueError("extract_code failed. No executable code found.")
@@ -101,11 +110,12 @@ def run_executor(question_path: str, agent: str, dev_code_path: str, func_list: 
         if error:
             logger.warning(f"Code error on attempt {retry_count + 1}, retrying...")
             file2 = os.path.join(os.path.dirname(question_path), f"critic_{agent}_{retry_count + 1}.txt")
-            corrected = correct_code(
+            corrected,message = correct_code(
                 file_path=file2,
-                code=exec_code,
+                code=exec_code[-1],
                 error_message=msg,
-                agent=agent
+                agent=agent,
+                messages=message
             )
             exec_code = extract_code(file2)
             if not exec_code:
@@ -116,3 +126,4 @@ def run_executor(question_path: str, agent: str, dev_code_path: str, func_list: 
             logger.info("Code executed successfully.")
 
     code_interpreter.cleanup()
+    return message
