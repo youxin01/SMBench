@@ -22,12 +22,12 @@ basic_planer ="""
 特征处理，包括独热编码、标签编码、标签解码、列映射(map_func)、跨表生成列特征函数(two_data_func)、
 单数据集列特征生成(generate_single_feature)、多数据集合并(merge_features)。
 ### machine_learning
-- 回归模型：XGBoost,LightGBM,简单线性回归,多项式回归,指数回归,幂律回归，RANSAC鲁棒回归。
-- 分类模型：XGBoost,LightGBM,逻辑回归，支撑向量机(SVM)，K最近邻分类(KNN)。
+- 回归模型：XGBoost(train_xgboost_regressor),lightGBM(train_lightgbm_regressor),简单线性回归(linear_regression),多项式回归,指数回归,幂律回归，RANSAC鲁棒回归。
+- 分类模型：XGBoost(train_xgboost_classifier),lightGBM(train_lightgbm_classifier),逻辑回归，支撑向量机(SVM)，K最近邻分类(KNN)。
 - 时序模型：ARIMA,LSTM。
 ### evaluate_model
 - 数学建模综合评价类问题的函数，并不是评估模型性能的函数。
-- 包含熵权法，TOPSIS，加权评分模型。
+- 包含熵权法，TOPSIS，加权评分模型,pagerank排序。
 ### math_optimization
 包含线性规划（solve_lp）、整数规划(solve_ilp)、非线性规划（solve_nlp）、二次规划（solve_qp）、
 二次凸规划（solve_qcqp）、0-1整数规划(solve_zop)、二阶锥规划(solve_socp)、
@@ -35,7 +35,7 @@ basic_planer ="""
 ### graph_optimization
 包含Dijkstra，最小生成树，papgerenk，解顶点着色问题，解最大流问题函数。
 ### statistics
-统计学函数，假设检验函数，分布检验函数。
+统计学函数，假设检验函数(hypothesis_test)，分布检验函数(distribution_test)。
 
 ## OutputFormat
 请严格按照以下 Markdown 格式输出任务规划：
@@ -75,12 +75,12 @@ pre_planer ="""
 特征处理，包括独热编码、标签编码、标签解码、列映射(map_func)、跨表生成列特征函数(two_data_func)、
 单数据集列特征生成(generate_single_feature)、多数据集合并(merge_features)。
 ### machine_learning
-- 回归模型：XGBoost,LightGBM,简单线性回归,多项式回归,指数回归,幂律回归，RANSAC鲁棒回归。
-- 分类模型：XGBoost,LightGBM,逻辑回归，支撑向量机(SVM)，K最近邻分类(KNN)。
+- 回归模型：train_xgboost_regressor,train_lightgbm_regressor,简单线性回归(linear_regression),多项式回归,指数回归,幂律回归，RANSAC鲁棒回归。
+- 分类模型：train_xgboost_classifier,train_lightgbm_classifier,逻辑回归，支撑向量机(SVM)，K最近邻分类(KNN)。
 - 时序模型：ARIMA,LSTM。
 ### evaluate_model
 - 数学建模综合评价类问题的函数，并不是评估模型性能的函数。
-- 包含熵权法，TOPSIS，加权评分模型。
+- 包含熵权法，TOPSIS，加权评分模型,pagerank排序。
 ### math_optimization
 包含线性规划（solve_lp）、整数规划(solve_ilp)、非线性规划（solve_nlp）、二次规划（solve_qp）、
 二次凸规划（solve_qcqp）、0-1整数规划(solve_zop)、二阶锥规划(solve_socp)、
@@ -88,7 +88,7 @@ pre_planer ="""
 ### graph_optimization
 包含Dijkstra，最小生成树，papgerenk，解顶点着色问题，解最大流问题函数。
 ### statistics
-统计学函数，假设检验函数，分布检验函数。
+统计学函数，假设检验函数(hypothesis_test)，分布检验函数(distribution_test)。
 
 ## OutputFormat
 请严格按照以下 Markdown 格式输出任务规划，：

@@ -1,0 +1,17 @@
+```markdown
+# PLAN
+[分析任务背景和问题类型]
+这是一个二分类问题，需要预测乘客是否被传送到另一个维度。数据集包含多个特征，包括分类变量和数值变量，且有缺失值需要处理。
+
+## STEP 1
+任务: 使用data_clean库填充缺失值，因为数据中存在多个特征的缺失值需要处理。
+
+## STEP 2
+任务: 使用feature_process库对分类变量HomePlanet、CryoSleep、Destination、VIP进行独热编码，因为这些是分类变量需要转换为数值形式。
+
+## STEP 3
+任务: 使用feature_process库对目标变量Transported进行标签编码，因为这是一个二分类问题需要将目标变量转换为数值形式。
+
+## STEP 4
+任务: 使用machine_learning库中的LightGBM分类模型进行训练，因为LightGBM在处理结构化数据和分类问题上表现优秀且效率高。
+```

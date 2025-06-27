@@ -1,0 +1,69 @@
+```markdown
+# 动态函数调用报告
+
+## 1. 识别问题
+目标：从比赛分析中提取的关键问题
+- ID列名以<ID>PassengerId</ID>包裹。
+- 问题类型以<type>分类</type>包裹。
+- 不参与模型训练列名以<drop>PassengerId, Cabin, Name</drop>包裹。
+- 模型的目标变量以<target>Transported</target>包裹。
+
+## 2. 阶段 1：数据预处理
+- 需要处理缺失值和分类特征编码。
+
+### 2.1 函数调用说明
+```python
+[
+    {"name": "fill_missing_values", "args": {"data": "train_data", "columns": ["HomePlanet", "CryoSleep", "Destination", "Age", "VIP", "RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"], "strategy": "mode"}},
+    {"name": "fill_missing_values", "args": {"data": "test_data", "columns": ["HomePlanet", "CryoSleep", "Destination", "Age", "VIP", "RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"], "strategy": "mode"}},
+    {"name": "one_hot_encode", "args": {"data": "train_data", "columns": ["HomePlanet", "CryoSleep", "Destination", "VIP"]}},
+    {"name": "one_hot_encode", "args": {"data": "test_data", "columns": ["HomePlanet", "CryoSleep", "Destination", "VIP"]}},
+    {"name": "label_encode", "args": {"data": "train_data", "columns": ["Transported"]}}
+]
+```
+
+## 3. 阶段 2：模型训练
+### 3.1 调用的函数
+```python
+[
+    {"name": "train_lightgbm_classifier", "args": {"data": "train_data", "target": "Transported", "new_data": "test_data", "test_size": 0.2, "params": {"objective": "binary", "metric": "binary_logloss", "max_depth": 6, "learning_rate": 0.1, "subsample": 0.8, "colsample_bytree": 0.8}, "num_boost_round": 100, "with_label": False}}
+]
+```
+
+## 4. 阶段3：代码合并
+### 4.1 合并代码
+```python
+# 读取数据
+train_data = pd.read_csv('./test_case/p1/train.csv')
+test_data = pd.read_csv('./test_case/p1/test.csv')
+
+# 阶段1：数据预处理
+# 填充缺失值
+train_data = fill_missing_values(data=train_data, columns=["HomePlanet", "CryoSleep", "Destination", "Age", "VIP", "RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"], strategy="mode")
+test_data = fill_missing_values(data=test_data, columns=["HomePlanet", "CryoSleep", "Destination", "Age", "VIP", "RoomService", "FoodCourt", "ShoppingMall", "Spa", "VRDeck"], strategy="mode")
+
+# 独热编码
+train_data = one_hot_encode(data=train_data, columns=["HomePlanet", "CryoSleep", "Destination", "VIP"])
+test_data = one_hot_encode(data=test_data, columns=["HomePlanet", "CryoSleep", "Destination", "VIP"])
+
+# 标签编码目标变量
+train_data = label_encode(data=train_data, columns=["Transported"])
+
+# 阶段2：模型训练
+predictions = train_lightgbm_classifier(
+    data=train_data,
+    target="Transported",
+    new_data=test_data,
+    test_size=0.2,
+    params={
+        "objective": "binary",
+        "metric": "binary_logloss",
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+    },
+    num_boost_round=100,
+    with_label=False
+)
+```

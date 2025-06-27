@@ -102,9 +102,11 @@ def run_executor(question_path: str, agent: str, dev_code_path: str, func_list: 
     message.append({"role": "assistant", "content": md_str})
     exec_code = extract_code(dev_code_path)
     if not exec_code:
-        raise ValueError("extract_code failed. No executable code found.")
+        logger.error(f"[WARNING] extract_code failed. No executable code found in: {dev_code_path}")
+        exec_code="print('此处无代码，进行检查')"
 
     retry_count, success = 0, False
+    output = None
     while not success and retry_count < max_retries:
         text, error, msg = code_interpreter.execute_code(exec_code[-1])
         if error:
@@ -123,7 +125,11 @@ def run_executor(question_path: str, agent: str, dev_code_path: str, func_list: 
             retry_count += 1
         else:
             success = True
+            final_output = text  # 保存成功结果
+            final_code = exec_code[-1]  # 保存最后成功的代码
+            output= f"```我执行了这个代码python\n{final_code}\n```结果如下\n\n{final_output}"
             logger.info("Code executed successfully.")
-
+    if not success:
+        output = "我尝试了多次修复代码，但仍然无法正确运行 😢，建议你手动检查一下。1Error1"
     code_interpreter.cleanup()
-    return message
+    return message,output

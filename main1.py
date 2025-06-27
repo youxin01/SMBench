@@ -1,7 +1,8 @@
 import argparse
 from utils.log_util import logger
 from pipelines.pipe import run_planner, run_rag, run_developer, run_executor
-
+import os
+from utils.utils1 import write_file
 def main():
     parser = argparse.ArgumentParser(description="Open-source pipeline for auto development tasks")
     parser.add_argument("--question", default="./test_case/o7/question.txt",required=True, help="Path to the question file")
@@ -17,8 +18,8 @@ def main():
     plan_path = run_planner(args.question, args.agent, args.cover, args.type)
     func_list = run_rag(args.question, plan_path)
     dev_code_path = run_developer(args.question, args.agent, args.cover, args.type, func_list)
-    run_executor(args.question, args.agent, dev_code_path, func_list, args.max_retries)
-
+    chat_message,out1=run_executor(args.question, args.agent, dev_code_path, func_list, args.max_retries)
+    write_file(os.path.join(os.path.dirname(args.question_path), f"message_{args.agent}.json"), chat_message)
     logger.info("Pipeline finished ✅")
 
 

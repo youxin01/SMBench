@@ -18,19 +18,6 @@ def ewn_analysis(
     grade_labels: list = None,
     level_ranges: list = None
 ) -> pd.DataFrame:
-    """
-    通用综合评价函数（适配企业经济效益评价）
-    
-    参数新增说明:
-    - data: 包含样本数据的DataFrame，必须包含指标列和索引列
-    - criteria: 评价标准字典，格式为 {指标: {等级: (下限, 上限), ...}, ...}
-    - index_col: 作为索引的列名
-    - positive_indicators: 明确的正向指标列表
-    - negative_indicators: 明确的负向指标列表
-    - enable_grade_evaluation: 是否启用等级评价（默认关闭）
-    - grade_labels: 等级标签列表，如 ['极贫','贫','中','富','极富']
-    - level_ranges: 综合得分等级分界点，格式为 [边界1, 边界2,...],用于np.digitize函数。
-    """
     
     # 数据预处理
     df = data.set_index(index_col).apply(pd.to_numeric, errors='coerce')
@@ -68,6 +55,11 @@ def ewn_analysis(
         weights = (1 - entropy) / (1 - entropy).sum()
         return weights
     
+    for ind in indicators:
+        if ind not in df.columns:
+            raise ValueError(f"指标 {ind} 不存在于数据中")
+        if df[ind].isnull().any():
+            raise ValueError(f"指标 {ind} 包含 NaN 值，请处理后再进行熵权计算")
     weights = entropy_weight(df[indicators])
     print("指标权重：", weights.to_dict())
     # 构建评价结果
@@ -229,7 +221,11 @@ def wsm_evaluation(data: pd.DataFrame,
     # 复制数据，设置索引
     data = data.copy()
     data.set_index(index_col, inplace=True)
-    
+    for col in weight_allocation.keys():
+        if col not in data.columns:
+            raise ValueError(f"指标 {col} 不存在于数据中")
+        if data[col].isnull().any():
+            raise ValueError(f"指标 {col} 包含 NaN 值，请处理后再进行加权评分")
     normalized_df = pd.DataFrame(index=data.index)
     
     # 对每个指标进行归一化处理

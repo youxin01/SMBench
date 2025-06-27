@@ -16,7 +16,7 @@
 
 - `new_data`:  
   - **Type:** `pd.DataFrame`  
-  - **Description:** 新数据集，用于模型预测。
+  - **Description:** 新数据集，用于模型预测,不包含目标列。
 
 - `test_size`:  
   - **Type:** `float`  
@@ -75,7 +75,7 @@
 
 - `new_data`:  
   - **Type:** `pd.DataFrame`  
-  - **Description:** 新数据集，用于模型预测。  
+  - **Description:** 新数据集，用于模型预测，不包含目标列。  
 
 - `test_size`:  
   - **Type:** `float`  
@@ -138,7 +138,7 @@
 
 - `new_data`:  
   - **Type:** `pd.DataFrame`  
-  - **Description:** 新数据集，用于模型预测。  
+  - **Description:** 新数据集，用于模型预测，不包含目标列。  
 
 - `test_size`:  
   - **Type:** `float`  
@@ -200,7 +200,7 @@
 
 - `new_data`:  
   - **Type:** `pd.DataFrame`  
-  - **Description:** 新数据集，用于模型预测。  
+  - **Description:** 新数据集，用于模型预测，不包含目标列。  
 
 - `test_size`:  
   - **Type:** `float`  
@@ -263,7 +263,7 @@
 
 - `new_data`:  
   - **Type:** `pd.DataFrame`  
-  - **Description:** 新数据集，用于模型预测。  
+  - **Description:** 新数据集，用于模型预测，不包含目标列。  
 
 - `test_size`:  
   - **Type:** `float`  

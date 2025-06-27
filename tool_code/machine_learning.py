@@ -98,7 +98,8 @@ def train_xgboost_classifier(
     with_label: bool = False
 ):
     X_train, X_test, y_train, y_test = split_data(data, target,test_size)
-    
+    print("X_train shape:", X_train.shape)
+    print("y_train shape:", y_train.shape)
     if params is None:
         params = {
             'objective': 'multi:softprob',  # 多分类概率输出
@@ -109,7 +110,7 @@ def train_xgboost_classifier(
             'colsample_bytree': 0.8,
             'eval_metric': ['mlogloss', 'merror']  # 多分类的评估指标
         }
-    if params.get('num_class') is None:
+    if params.get('objective', '').startswith('multi') and params.get('num_class') is None:
         params['num_class'] = len(np.unique(y_train))
 
     dtrain = xgb.DMatrix(X_train, label=y_train)
@@ -288,23 +289,6 @@ def train_simple_regressor(
     s: float = None,
     with_label: bool = False
 ):
-    """
-    统一拟合函数（支持线性、多项式、样条插值）
-    
-    参数：
-        data : pd.DataFrame, 训练数据（包含特征和target列）
-        target : str, 目标列名
-        new_data : pd.DataFrame, 待预测的新数据（可选）
-        method : str, 拟合方法 ('linear', 'poly', 'spline')
-        test_size : float, 测试集比例（0-1）
-        degree : int, 多项式阶数（仅对method='poly'有效）
-        s : float, 样条平滑参数（仅对method='spline'有效）
-        with_label : bool, 是否将预测结果与输入数据合并返回
-    
-    返回：
-        如果 with_label=True: 返回带预测结果的DataFrame
-        否则: 返回预测结果数组/DataFrame
-    """
     # 拆分训练集和测试集
     X_train, X_test, y_train, y_test = split_data(data,target,test_size)
     
