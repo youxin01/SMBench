@@ -69,7 +69,7 @@ model = ChatOpenAI(
     temperature=0,
     max_tokens=None,
     timeout=None,
-    api_key="sk-3f4a482416744badbd6ee1ff7d268026",
+    api_key="",
     base_url="https://api.deepseek.com/v1",
 )
 
