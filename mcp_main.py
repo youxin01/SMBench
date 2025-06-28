@@ -59,9 +59,9 @@ def extract_to_txt(response, output_file1: str, output_file2: str) -> None:
     except Exception as e:
         print(f"Error writing extracted information to file: {e}")
 
-# 1. 首先设置事件循环策略（必须在所有异步操作之前）
-if sys.platform == "win32":
-    asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
+# # 1. 首先设置事件循环策略（必须在所有异步操作之前）
+# if sys.platform == "win32":
+#     asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
 
 # 2. 初始化模型
 model = ChatOpenAI(

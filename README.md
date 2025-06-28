@@ -68,7 +68,9 @@ Statistical analysis tasks like hypothesis testing or distribution testing.
 
 ------
 
-### ▶️ Run the Pipeline
+### ▶️ Run
+
+#### No MCP
 
 Use the following command to run AMML:
 
@@ -87,4 +89,34 @@ python ./pipeline.py --question ./test_case/o7/question.txt --type opt --agent d
 - `--agent`: LLM provider (`deepseek`, `qwen32`, `qwen72`, `kimi`, `doubao`, etc.).
 - `--max_retries`: Max retries for automatic code correction.
 - `--cover`: Overwrite intermediate results (useful for re-running).
+
+#### MCP
+
+In order to make it more easier to use, I create MCP Agent for the project:
+
+- Configure the `mcp_main.py` agent, you can choose llm you like.
+
+then `python main_mcp.py`,and you can chat with the tool:
+
+```txt
+[USER PROMPT]
+我有一个建模问题，问题路径在./MMBench/optimization/o3/question.txt,请你帮我解决一下,我要知道答案
+
+[FUNCTION CALL]
+Name: read_file
+Arguments: {"file_path":"./MMBench/optimization/o3/question.txt"}
+
+[FUNCTION CALL]
+Name: solve_modeling_problem
+Arguments: {"question_path":"./MMBench/optimization/o3/question.txt","type":"opt"}
+
+[AI RESPONSE]
+问题的最优生产计划和最大日利润如下：
+
+- **最优生产计划**：
+  - 生产A产品使用20桶牛奶。
+  - 生产B产品使用30桶牛奶。
+
+- **最大日利润**：3360元。
+```
 
