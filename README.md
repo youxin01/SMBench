@@ -70,9 +70,9 @@ Statistical analysis tasks like hypothesis testing or distribution testing.
 
 ### ▶️ Run
 
-#### No MCP
+#### 🔧 Standalone Mode (No MCP)
 
-Use the following command to run AMML:
+You can directly run the pipeline via command line:
 
 ```bash
 python ./pipeline.py --question ./test_case/o7/question.txt --type opt --agent deepseek --max_retries 3 --cover
@@ -80,35 +80,42 @@ python ./pipeline.py --question ./test_case/o7/question.txt --type opt --agent d
 
 **Arguments:**
 
-- `--question`: Path to the question file.
+- `--question`: Path to the question file
 - `--type`: Task type:
-  - `opt` = optimization
-  - `pre` = prediction
-  - `eval` = evaluation
-  - `basic` = statistical/basic task
-- `--agent`: LLM provider (`deepseek`, `qwen32`, `qwen72`, `kimi`, `doubao`, etc.).
-- `--max_retries`: Max retries for automatic code correction.
-- `--cover`: Overwrite intermediate results (useful for re-running).
+  - `opt` = Optimization
+  - `pre` = Prediction
+  - `eval` = Evaluation
+  - `basic` = Basic Statistical Task
+- `--agent`: LLM provider (e.g., `deepseek`, `qwen32`, `kimi`, `doubao`)
+- `--max_retries`: Maximum number of retries for code correction
+- `--cover`: Force overwrite intermediate results (useful for re-running)
 
-#### MCP
+------
 
-In order to make it more easier to use, I create MCP Agent for the project:
+#### 🧠 Interactive Mode with MCP
 
-- Configure the `mcp_main.py` agent, you can choose llm you like.
+To make the framework more user-friendly, we provide an **MCP Agent** for conversational use.
 
-then `python main_mcp.py`,and you can chat with the tool:
+1. Configure the LLM provider in `mcp_main.py`
+2. Launch the interactive agent:
+
+```bash
+python main_mcp.py
+```
+
+Example interaction:
 
 ```txt
 [USER PROMPT]
-我有一个建模问题，问题路径在./MMBench/optimization/o3/question.txt,请你帮我解决一下,我要知道答案
+我有一个建模问题，问题路径在 ./MMBench/optimization/o3/question.txt，请你帮我解决一下，我要知道答案。
 
 [FUNCTION CALL]
-Name: read_file
-Arguments: {"file_path":"./MMBench/optimization/o3/question.txt"}
+Name: read_file  
+Arguments: {"file_path": "./MMBench/optimization/o3/question.txt"}
 
 [FUNCTION CALL]
-Name: solve_modeling_problem
-Arguments: {"question_path":"./MMBench/optimization/o3/question.txt","type":"opt"}
+Name: solve_modeling_problem  
+Arguments: {"question_path": "./MMBench/optimization/o3/question.txt", "type": "opt"}
 
 [AI RESPONSE]
 问题的最优生产计划和最大日利润如下：
