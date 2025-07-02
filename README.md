@@ -1,6 +1,5 @@
-# AMML: An Adaptive Framework for Mathematical Modeling with LLMs
-
-This repository provides the official implementation of the paper:***AMML: An Adaptive Framework for Mathematical Modeling with LLMs\***
+# SMBench: Dataset and Framework for Evaluating Sub-Modeling via Adaptive Function Selection
+This repository provides the official implementation of the paper: **SMBench: Dataset and Framework for Evaluating Sub-Modeling via Adaptive Function Selection**
 
 <p align="center">   <img src="./assets/pipeline.png" alt="AMML Pipeline" width="700"> </p>
 
@@ -18,7 +17,7 @@ pip install -r requirements.txt
 
 ### 🔐 API Configuration
 
-To use AMML with different LLM providers, configure the API in `utils/api.py`.
+To use ASMF with different LLM providers, configure the API in `utils/api.py`.
  For example:
 
 ```python
@@ -35,7 +34,7 @@ To use AMML with different LLM providers, configure the API in `utils/api.py`.
 
 ### 📁 Data Format
 
-AMML supports four task types, each with specific input requirements:
+ASMF supports four task types, each with specific input requirements:
 
 #### 🔮 Prediction
 
